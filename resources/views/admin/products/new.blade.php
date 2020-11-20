@@ -21,6 +21,10 @@
                                 <input type="text" name="name" class="form-control" id="name" >
                             </div>
                             <div class="form-group">
+                                <label for="image">Product Image</label>
+                                <input type="file" name="image" class="form-control" id="image" >
+                            </div>
+                            <div class="form-group">
                                 <label for="category">Category</label>
                                 <select name="category" class="form-control" id="category">
                                     <option>Category 1</option>

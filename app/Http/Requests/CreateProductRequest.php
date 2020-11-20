@@ -28,6 +28,7 @@ class CreateProductRequest extends FormRequest
             'category' => 'required',
             'tags' => 'required',
             'price' => 'required',
+            'image' => 'required',
             'short_description' => 'required',
             'long_description' => 'required',
         ];

@@ -7,7 +7,6 @@ use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\DeleteProductRequest;
 use App\Http\Requests\EditProductRequest;
 use App\Models\Product;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
@@ -24,7 +23,7 @@ class ProductController extends Controller
             return redirect()->route('admin.products');
         }catch (\Exception $exception){
             Log::error($exception);
-            return redirect()->back()->withErrors(['error', 'Error creating product']);
+            return redirect()->back()->withErrors(['Error creating product']);
         }
     }
 
@@ -46,7 +45,7 @@ class ProductController extends Controller
             return redirect()->route('admin.products');
         }catch (\Exception $exception){
             Log::error($exception);
-            return redirect()->back()->withErrors(['error', 'Error in updating']);
+            return redirect()->back()->withErrors(['Error in updating']);
         }
     }
 
@@ -61,7 +60,7 @@ class ProductController extends Controller
             return redirect()->route('admin.products');
         }catch (\Exception $exception){
             Log::error($exception);
-            return redirect()->back()->withErrors('Error', 'Error in deletion');
+            return redirect()->back()->withErrors(['Error in deletion']);
         }
     }
 }

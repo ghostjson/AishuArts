@@ -21,6 +21,7 @@ class CreateProductTable extends Migration
             $table->string('price');
             $table->text('short_description');
             $table->longText('long_description');
+            $table->string('image');
             $table->timestamps();
         });
     }
