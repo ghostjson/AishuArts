@@ -17,6 +17,10 @@ class CreateProductTable extends Migration
             $table->id();
             $table->string('name');
             $table->bigInteger('category')->unsigned();
+            $table->string('tags');
+            $table->string('price');
+            $table->text('short_description');
+            $table->longText('long_description');
             $table->timestamps();
         });
     }

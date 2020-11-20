@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\Shop\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,3 +15,5 @@ Route::get('/products', function () {
 Route::get('/products/new', function () {
     return view('admin.products.new');
 })->name('admin.products.new');
+
+Route::post('/products/new', [ProductController::class, 'new'])->name('admin.products.new.post');
