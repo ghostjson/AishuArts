@@ -1,29 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('client.master')
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <meta name="author" content="Akhil Ravindran"/>
-    <meta name="description" content="Themeforest Template Polo, html template">
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Document title -->
-    <title>Aishu Arts</title>
-    <!-- Stylesheets & Fonts -->
-    <link href="{{ asset('css/plugins.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-</head>
-
-<body>
+@section('content')
 
 
-<!-- Body Inner -->
-<div class="body-inner">
-
-@include('client.partials.header')
-
-<!-- SECTION HOME  -->
+    <!-- SECTION HOME  -->
     <section class="fullscreen" style="background: url('images/parallax/13.jpg')">
         <div class="container">
             <div class="text-left">
@@ -42,13 +22,13 @@
     </section>
     <!-- end: SECTION HOME -->
 
-@include('client.partials.featured')
+    @include('client.partials.featured')
 
-@include('client.partials.sale')
+    @include('client.partials.sale')
 
-@include('client.partials.category_browse')
+    @include('client.partials.category_browse')
 
-<!-- DELIVERY INFO -->
+    <!-- DELIVERY INFO -->
     <section class="background-grey p-t-40 p-b-0">
         <div class="container">
             <div class="row">
@@ -86,21 +66,5 @@
     </section>
     <!-- end: DELIVERY INFO -->
 
-    @include('client.partials.footer')
 
-
-</div>
-<!-- end: Body Inner -->
-
-<!-- Scroll top -->
-<a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
-<!--Plugins-->
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/plugins.js') }}"></script>
-
-<!--Template functions-->
-<script src="{{ asset('js/functions.js') }}"></script>
-
-</body>
-
-</html>
+@endsection
