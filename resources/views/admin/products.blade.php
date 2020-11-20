@@ -2,11 +2,39 @@
 
 @section('content')
 
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this product permanently?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <form method="post" action="{{ route('admin.products.delete') }}">
+                        @csrf
+                        {{ method_field('DELETE') }}
+
+                        <input type="hidden" id="deleteInput" name="product_id">
+                        <button type="submit" class="btn btn-danger">Delete Permanently</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container mt-3">
         <div class="row">
             <div class="col">
                 <div class="card pb-3">
-                    <!-- Card header -->
+                @include('partials.error')
+
+                <!-- Card header -->
                     <div class="card-header border-0" style="display: flex">
                         <h3 class="mb-0">Products</h3>
                         <div class="button-group" style="margin-left: auto">
@@ -54,8 +82,8 @@
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="#">Edit</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
+                                                <a class="dropdown-item" href="{{ route('admin.products.edit', $product->id) }}">Edit</a>
+                                                <a class="dropdown-item" onclick="deleteProduct({{ $product->id }})" href="#"  data-toggle="modal" data-target="#deleteModal">Delete</a>
                                                 {{--                                                <a class="dropdown-item" href="#">Something else here</a>--}}
                                             </div>
                                         </div>
@@ -111,5 +139,12 @@
                 }
             });
         } );
+
+
+        function deleteProduct (id) {
+            console.log(id)
+            $('#deleteInput').val(id);
+        }
+
     </script>
 @endsection
