@@ -17,6 +17,8 @@
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/argon.css?v=1.2.0') }}" type="text/css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body>
@@ -43,6 +45,12 @@
 <script src="{{ asset('assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
 <!-- Argon JS -->
 <script src="{{ asset('assets/js/argon.js?v=1.2.0') }}"></script>
+
+<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+
+@yield('scripts')
+
 </body>
 
 </html>

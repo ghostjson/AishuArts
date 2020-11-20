@@ -20,4 +20,10 @@ class ProductController extends Controller
             return redirect()->back()->withErrors(['error', 'Error creating product']);
         }
     }
+
+    public function index()
+    {
+        $products = Product::all();
+        return view('admin.products', compact('products'));
+    }
 }

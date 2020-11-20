@@ -8,9 +8,7 @@ Route::get('/', function () {
     return view('admin.dashboard');
 })->name('admin.dashboard');
 
-Route::get('/products', function () {
-    return view('admin.products');
-})->name('admin.products');
+Route::get('/products', [ProductController::class, 'index'])->name('admin.products');
 
 Route::get('/products/new', function () {
     return view('admin.products.new');
