@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Shop\ShopController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,9 @@ Route::get('/', function () {
     return view('client.home');
 })->name('client.home');
 
-Route::get('/shop', function () {
-    return view('client.shop');
-})->name('client.shop');
+Route::get('/shop', [ShopController::class, 'shopPage'])->name('client.shop');
 
-Route::get('/product', function () {
-    return view('client.product');
-})->name('client.product');
+Route::get('/product/{product}', [ShopController::class, 'productPage'])->name('client.product');
 
 Route::get('/cart', function () {
     return view('client.cart');

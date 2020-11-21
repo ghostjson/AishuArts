@@ -1,26 +1,6 @@
 @extends('client.master')
 
 @section('content')
-    <!-- Page title -->
-    <section id="page-title">
-        <div class="container">
-            <div class="page-title">
-                <h1>Checkout</h1>
-                <span>Checkout details</span>
-            </div>
-            <div class="breadcrumb">
-                <ul>
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Shop</a>
-                    </li>
-                    <li class="active"><a href="#">Checkout</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!-- end: Page title -->
     <!-- SHOP CHECKOUT -->
     <section id="shop-checkout">
         <div class="container">

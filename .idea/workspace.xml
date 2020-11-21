@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5e636e9-6397-4518-a977-1eb06b748f55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Helpers/FileUploadHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Helpers/RespondHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Helpers/RespondWithObjectHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/aishuArts.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aishuArts.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Shop/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Shop/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateProductRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Shop/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Shop/ShopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/EditProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/EditProductRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_20_043417_create_product_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_20_043417_create_product_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/new.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/shop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/client.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/client.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +175,8 @@
       <updated>1605844059956</updated>
       <workItem from="1605844061847" duration="8823000" />
       <workItem from="1605853494460" duration="3097000" />
-      <workItem from="1605880501630" duration="8293000" />
+      <workItem from="1605880501630" duration="8541000" />
+      <workItem from="1605952705412" duration="2382000" />
     </task>
     <task id="LOCAL-00001" summary="add admin panel&#10;add product section &#10;add product new page">
       <created>1605854879574</created>
@@ -207,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605887932386</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="image upload implemented&#10;some helpers functions added">
+      <created>1605889880677</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605889880677</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +225,8 @@
     <MESSAGE value="create product implemented" />
     <MESSAGE value="implement product listing on admin" />
     <MESSAGE value="product delete implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="product delete implemented" />
+    <MESSAGE value="image upload implemented&#10;some helpers functions added" />
+    <option name="LAST_COMMIT_MESSAGE" value="image upload implemented&#10;some helpers functions added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605855717384">
@@ -230,10 +237,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="438" y="180" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1605844747005" />
-    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1605887931334">
+    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1605889877987">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1605887931334" />
+    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1605889877987" />
     <state x="496" y="107" key="FileChooserDialogImpl" timestamp="1605855712918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -242,9 +250,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="409" y="22" width="718" height="780" key="find.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1605847675847" />
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1605888900155">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup" timestamp="1605955084844">
+      <screen x="1920" y="0" width="1360" height="728" />
     </state>
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1605888900155" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1605953502674" />
+    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1605955084844" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605889918328" />
   </component>
 </project>

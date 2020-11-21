@@ -1,26 +1,6 @@
 @extends('client.master')
 
 @section('content')
-    <!-- Page title -->
-    <section id="page-title">
-        <div class="container">
-            <div class="page-title">
-                <h1>Shopping Cart</h1>
-                <span>Shopping details</span>
-            </div>
-            <div class="breadcrumb">
-                <ul>
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Shop</a>
-                    </li>
-                    <li class="active"><a href="#">Shopping Cart</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!-- end: Page title -->
     <!-- SHOP CART -->
     <section id="shop-cart">
         <div class="container">

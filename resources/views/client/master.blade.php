@@ -38,6 +38,8 @@
 <!--Template functions-->
 <script src="{{ asset('js/functions.js') }}"></script>
 
+@yield('scripts')
+
 </body>
 
 </html>

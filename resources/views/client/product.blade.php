@@ -9,10 +9,8 @@
                     <div class="col-lg-5">
                         <div class="product-image">
                             <!-- Carousel slider -->
-                            <div class="carousel dots-inside dots-dark arrows-visible" data-items="1" data-loop="true" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-autoplay="2500" data-lightbox="gallery">
-                                <a href="images/shop/products/product-large.jpg" data-lightbox="image" title="Shop product image!"><img alt="Shop product image!" src="images/shop/products/1.jpg">
-                                </a>
-                                <a href="images/shop/products/product-large.jpg" data-lightbox="image" title="Shop product image!"><img alt="Shop product image!" src="images/shop/products/2.jpg">
+                            <div class=" dots-inside dots-dark arrows-visible" data-items="1" data-loop="true" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-autoplay="2500" data-lightbox="gallery">
+                                <a href="{{ $product->image }}" data-lightbox="image" title="Shop product image!"><img alt="Shop product image!" src="{{ $product->image }}">
                                 </a>
                             </div>
                             <!-- Carousel slider -->
@@ -20,11 +18,11 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="product-description">
-                            <div class="product-category">Women</div>
+                            <div class="product-category">{{ $product->category }}</div>
                             <div class="product-title">
-                                <h3><a href="#">Consume Tshirt</a></h3>
+                                <h3><a href="#">{{ $product->name }}</a></h3>
                             </div>
-                            <div class="product-price"><ins>$39.00</ins>
+                            <div class="product-price"><ins>{{ $product->price }}</ins>
                             </div>
                             <div class="product-rate">
 {{--                                <i class="fa fa-star"></i>--}}
@@ -37,13 +35,9 @@
 {{--                                <a href="#">3 customer reviews</a>--}}
                             </div>
                             <div class="seperator m-b-10"></div>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked
-                                up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-                                going through the cites of the word in</p>
+                            <p>{{ $product->short_description }}</p>
                             <div class="product-meta">
-                                <p>Tags: <a href="#" rel="tag">Clothing</a>, <a rel="tag" href="#">T-shirts</a>
+                                <p>Tags: <a href="#" rel="tag">{{ $product->tags }}</a>
                                 </p>
                             </div>
                             <div class="seperator m-t-20 m-b-10"></div>
@@ -70,16 +64,7 @@
                     </ul>
                     <div class="tab-content" id="myTabContent3">
                         <div class="tab-pane fade active show" id="home3" role="tabpanel" aria-labelledby="home-tab">
-                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo
-                                minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis
-                                dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum
-                                necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non
-                                recusandae. </p>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                                occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
-                                mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
-                                expedita distinctio.</p>
+                            {{ $product->long_description }}
                         </div>
                         <div class="tab-pane fade " id="profile3" role="tabpanel" aria-labelledby="profile-tab">
                             <table class="table table-striped table-bordered">
