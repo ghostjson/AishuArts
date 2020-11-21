@@ -13,7 +13,9 @@ class AuthController extends Controller
     {
         if(Auth::attempt($request->validated()))
         {
-            return redirect()->route('client.home');
+            return \auth()->user()->role == 'admin' ?
+                redirect()->route('admin.dashboard') : redirect()->route('client.home')
+                ;
         }else{
             return redirect()->back()->withErrors(['Email or password is incorrect']);
         }

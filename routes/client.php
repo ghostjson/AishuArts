@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Managers\AuthController;
 use App\Http\Controllers\Pages\AuthPagesController;
-use App\Http\Controllers\Shop\ShopPagesController;
+use App\Http\Controllers\Pages\ShopPagesController;
 use Illuminate\Support\Facades\Route;
 
 

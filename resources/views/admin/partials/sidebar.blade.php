@@ -23,6 +23,12 @@
                             <span class="nav-link-text">Products</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('client.logout') }}">
+                            <i class="ni ni-user-run text-primary"></i>
+                            <span class="nav-link-text">Logout</span>
+                        </a>
+                    </li>
                 </ul>
 
             </div>
