@@ -1,27 +1,18 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\Shop\ShopController;
+use App\Http\Controllers\Managers\AuthController;
+use App\Http\Controllers\Pages\AuthPagesController;
+use App\Http\Controllers\Shop\ShopPagesController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('client.home');
 })->name('client.home');
 
-Route::get('/shop', [ShopController::class, 'shopPage'])->name('client.shop');
+Route::get('/shop', [ShopPagesController::class, 'shopPage'])->name('client.shop');
 
-Route::get('/product/{product}', [ShopController::class, 'productPage'])->name('client.product');
+Route::get('/product/{product}', [ShopPagesController::class, 'productPage'])->name('client.product');
 
 Route::get('/cart', function () {
     return view('client.cart');
@@ -41,10 +32,9 @@ Route::get('/about', function () {
 
 
 // Authentication
-Route::get('/login', [AuthController::class, 'loginPage'])->name('client.login');
+Route::get('/login', [AuthPagesController::class, 'loginPage'])->name('client.login');
 
 Route::post('/login', [AuthController::class, 'login'])->name('client.login.post');
-
 Route::get('/logout', [AuthController::class, 'logout'])->name('client.logout');
 
 Route::get('/register', function () {

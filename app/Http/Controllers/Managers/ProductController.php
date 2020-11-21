@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Shop;
+namespace App\Http\Controllers\Managers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProductRequest;
@@ -11,10 +11,8 @@ use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
 {
-    public function newPage()
-    {
-        return view('admin.products.new');
-    }
+
+
 
     public function new(CreateProductRequest $request)
     {
@@ -27,16 +25,6 @@ class ProductController extends Controller
         }
     }
 
-    public function indexPage()
-    {
-        $products = Product::all();
-        return view('admin.products', compact('products'));
-    }
-
-    public function editPage(Product $product)
-    {
-        return view('admin.products.edit', compact('product'));
-    }
 
     public function update(EditProductRequest $request, Product $product)
     {

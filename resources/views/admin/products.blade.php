@@ -58,11 +58,13 @@
 
                                     <th scope="row">
                                         <div class="media align-items-center">
-                                            <a href="#" class="avatar rounded-circle mr-3">
-                                                <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
+                                            <a href="#" class="avatar mr-3">
+                                                <img alt="Image placeholder" style="width: 100%; height: 100%;" src="{{ $product->image }}">
                                             </a>
                                             <div class="media-body">
-                                                <span class="name mb-0 text-sm">{{ $product->name }}</span>
+                                                <a href="{{ route('client.product', $product->id) }}">
+                                                    <span class="name mb-0 text-sm">{{ $product->name }}</span>
+                                                </a>
                                             </div>
                                         </div>
                                     </th>

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ShopController extends Controller
+class ShopPagesController extends Controller
 {
     public function shopPage()
     {

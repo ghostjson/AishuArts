@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Controllers\Pages;
+
+use App\Http\Controllers\Controller;
+use App\Models\Product;
+
+class AdminPagesController extends Controller
+{
+    public function dashboard()
+    {
+        return view('admin.dashboard');
+    }
+
+    public function productsPage()
+    {
+        $products = Product::all();
+        return view('admin.products', compact('products'));
+    }
+
+    public function createProductPage()
+    {
+        return view('admin.products.new');
+    }
+
+    public function editProductPage(Product $product)
+    {
+        return view('admin.products.edit', compact('product'));
+    }
+}
