@@ -25,7 +25,7 @@ var INSPIRO = {},
     //Logo
     headerLogo = $("#logo"),
     //Menu
-    $mainMenu = $("#mainMenu"),    
+    $mainMenu = $("#mainMenu"),
     $mainMenuTriggerBtn = $("#mainMenu-trigger a, #mainMenu-trigger button"),
     //Slider
     $slider = $("#slider"),
@@ -106,7 +106,7 @@ var INSPIRO = {},
   });
 
 
-  
+
   INSPIRO.core = {
     functions: function () {
       INSPIRO.core.scrollTop()
@@ -508,7 +508,7 @@ var INSPIRO = {},
               $mainMenu.find(".hover-active").removeClass("hover-active");
             }
           }
-      }); 
+      });
 
 
         /*invert menu fix*/
@@ -740,7 +740,7 @@ var INSPIRO = {},
             responsiveHeightXs = elem.attr("data-height-xs"),
             containerFullscreen = elem.find(".container").first().outerHeight(),
             contentCrop;
-            
+
           if (containerFullscreen >= windowHeight) {
             contentCrop = true;
             var sliderMinHeight = containerFullscreen;
@@ -834,7 +834,7 @@ var INSPIRO = {},
           }
 
           sliderHeight(elem);
-          
+
           var inspiroSliderData = elem.flickity({
             cellSelector: elem.options.cellSelector,
             prevNextButtons: elem.options.prevNextButtons,
@@ -1193,12 +1193,12 @@ var INSPIRO = {},
               false
             )
           });
-          
+
           elem.submit(function (event) {
             event.preventDefault();
             var post_url = $(this).attr("action");
             var request_method = $(this).attr("method");
-            
+
             if (elem[0].checkValidity() === false) {
               event.stopPropagation()
               elem.addClass("was-validated")
@@ -1207,7 +1207,7 @@ var INSPIRO = {},
               button.html('<i class="icon-loader fa-spin"> </i> Sending...')
               $.ajax({
                 url: post_url,
-                type: request_method,   
+                type: request_method,
                 data: new FormData(this),
                 cache: false,
                 contentType: false,
@@ -1262,7 +1262,7 @@ var INSPIRO = {},
             elemWidth = elem.outerWidth();
 
           /* if(elemVisible !== "all") {
-            
+
           }else {
             if ($body.hasClass("b--desktop")) {
 
@@ -1779,7 +1779,7 @@ var INSPIRO = {},
             "line-height": elem.options.size + "px"
           })
           //Initializing jQuery easyPieChart plugin and passing the options
-          
+
           setTimeout(function() {
           new Waypoint({
             element: elem,
@@ -2166,7 +2166,7 @@ var INSPIRO = {},
                  if ($(this.content).find("video").length > 0) {
                   $(this.content).find("video").get(0).load();
                 }
-              }           
+              }
             },
             fixedContentPos: true,
             overflowY: "scroll"
@@ -2370,7 +2370,7 @@ var INSPIRO = {},
                         if ($(this.content).find("video").length > 0) {
                           $(this.content).find("video").get(0).play();
                         }
-                        
+
                     },
                     close: function () {
                        if ($(this.content).find("video").length > 0) {
@@ -2825,7 +2825,7 @@ var INSPIRO = {},
           jQuery.fn.spectragram.accessData = {
             accessToken: instagramAccessToken
           };
-          
+
           elem.find($(instagramItems)).spectragram({
             complete : myCallbackFunc(),
             max: instagramLimit,

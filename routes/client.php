@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Shop\ShopController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,9 +39,13 @@ Route::get('/about', function () {
     return view('client.home');
 })->name('client.about');
 
-Route::get('/login', function () {
-    return view('client.home');
-})->name('client.login');
+
+// Authentication
+Route::get('/login', [AuthController::class, 'loginPage'])->name('client.login');
+
+Route::post('/login', [AuthController::class, 'login'])->name('client.login.post');
+
+Route::get('/logout', [AuthController::class, 'logout'])->name('client.logout');
 
 Route::get('/register', function () {
     return view('client.home');
