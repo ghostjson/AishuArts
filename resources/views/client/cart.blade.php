@@ -12,155 +12,65 @@
                             <th class="cart-product-remove"></th>
                             <th class="cart-product-thumbnail">Product</th>
                             <th class="cart-product-name">Description</th>
-                            <th class="cart-product-price">Unit Price</th>
-                            <th class="cart-product-quantity">Quantity</th>
-                            <th class="cart-product-subtotal">Total</th>
+                            <th class="cart-product-price">Price</th>
+                            {{--                            <th class="cart-product-quantity">Quantity</th>--}}
+{{--                            <th class="cart-product-subtotal">Total</th>--}}
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td class="cart-product-remove">
-                                <a href="#"><i class="fa fa-times"></i></a>
-                            </td>
-                            <td class="cart-product-thumbnail">
-                                <a href="#">
-                                    <img src="images/shop/products/1.jpg" alt="Bolt Sweatshirt">
-                                </a>
-                                <div class="cart-product-thumbnail-name">Bolt Sweatshirt</div>
-                            </td>
-                            <td class="cart-product-description">
-                                <p><span>Bolt Sweatshirt</span>
-                                    <span>Size: M</span>
-                                    <span>Color: Blue</span>
-                                    <span>Gender: Women</span>
-                                </p>
-                            </td>
-                            <td class="cart-product-price">
-                                <span class="amount">$20.00</span>
-                            </td>
-                            <td class="cart-product-quantity">
-                                <div class="quantity">
-                                    <input type="button" class="minus" value="-">
-                                    <input type="text" class="qty" value="1" name="quantity">
-                                    <input type="button" class="plus" value="+">
-                                </div>
-                            </td>
-                            <td class="cart-product-subtotal">
-                                <span class="amount">$20.00</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cart-product-remove">
-                                <a href="#"><i class="fa fa-times"></i></a>
-                            </td>
-                            <td class="cart-product-thumbnail">
-                                <a href="#">
-                                    <img alt="Consume Tshirt" src="images/shop/products/2.jpg">
-                                </a>
-                                <div class="cart-product-thumbnail-name">Consume Tshirt</div>
-                            </td>
-                            <td class="cart-product-description">
-                                <p><span>Consume Tshirt</span>
-                                    <span>Size: S</span>
-                                    <span>Color: Blue</span>
-                                    <span>Gender: Women</span>
-                                </p>
-                            </td>
-                            <td class="cart-product-price">
-                                <span class="amount">$18.99</span>
-                            </td>
-                            <td class="cart-product-quantity">
-                                <div class="quantity">
-                                    <input type="button" class="minus" value="-">
-                                    <input type="text" class="qty" value="1" name="quantity">
-                                    <input type="button" class="plus" value="+">
-                                </div>
-                            </td>
-                            <td class="cart-product-subtotal">
-                                <span class="amount">$18.99</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cart-product-remove">
-                                <a href="#"><i class="fa fa-times"></i></a>
-                            </td>
-                            <td class="cart-product-thumbnail">
-                                <a href="#">
-                                    <img src="images/shop/products/3.jpg" alt="Logo Tshirt">
-                                </a>
-                                <div class="cart-product-thumbnail-name">Logo Tshirt</div>
-                            </td>
-                            <td class="cart-product-description">
-                                <p><span>Logo Tshirt</span>
-                                    <span>Size: L</span>
-                                    <span>Color: Grey</span>
-                                    <span>Gender: Man</span>
-                                </p>
-                            </td>
-                            <td class="cart-product-price">
-                                <span class="amount">$9.00</span>
-                            </td>
-                            <td class="cart-product-quantity">
-                                <div class="quantity">
-                                    <input type="button" class="minus" value="-">
-                                    <input type="text" class="qty" value="2" name="quantity">
-                                    <input type="button" class="plus" value="+">
-                                </div>
-                            </td>
-                            <td class="cart-product-subtotal">
-                                <span class="amount">$18.00</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cart-product-remove">
-                                <a href="#"><i class="fa fa-times"></i></a>
-                            </td>
-                            <td class="cart-product-thumbnail">
-                                <a href="#">
-                                    <img src="images/shop/products/5.jpg" alt="Grey Sweatshirt">
-                                </a>
-                                <div class="cart-product-thumbnail-name">Grey Sweatshirt</div>
-                            </td>
-                            <td class="cart-product-description">
-                                <p><span>Grey Sweatshirt</span>
-                                    <span>Size: L</span>
-                                    <span>Color: Grey</span>
-                                    <span>Gender: Man</span>
-                                </p>
-                            </td>
-                            <td class="cart-product-price">
-                                <span class="amount">$22.99</span>
-                            </td>
-                            <td class="cart-product-quantity">
-                                <div class="quantity">
-                                    <input type="button" class="minus" value="-">
-                                    <input type="text" class="qty" value="3" name="quantity">
-                                    <input type="button" class="plus" value="+">
-                                </div>
-                            </td>
-                            <td class="cart-product-subtotal">
-                                <span class="amount">$68.97</span>
-                            </td>
-                        </tr>
+
+                        @foreach($products as $product)
+                            <tr>
+                                <td class="cart-product-remove">
+                                    <a href="{{ route('client.remove_from_cart', $product->id) }}"><i class="fa fa-times"></i></a>
+                                </td>
+                                <td class="cart-product-thumbnail">
+                                    <a href="#">
+                                        <img src="{{ $product->image }}" alt="Bolt Sweatshirt">
+                                    </a>
+                                    <div class="cart-product-thumbnail-name">Bolt Sweatshirt</div>
+                                </td>
+                                <td class="cart-product-description">
+                                    <p><span>Bolt Sweatshirt</span>
+                                        <span>Size: M</span>
+                                        <span>Color: Blue</span>
+                                        <span>Gender: Women</span>
+                                    </p>
+                                </td>
+                                {{--                            <td class="cart-product-price">--}}
+                                {{--                                <span class="amount">$20.00</span>--}}
+                                {{--                            </td>--}}
+                                {{--                            <td class="cart-product-quantity">--}}
+                                {{--                                <div class="quantity">--}}
+                                {{--                                    <input type="button" class="minus" value="-">--}}
+                                {{--                                    <input type="text" class="qty" value="1" name="quantity">--}}
+                                {{--                                    <input type="button" class="plus" value="+">--}}
+                                {{--                                </div>--}}
+                                {{--                            </td>--}}
+                                <td class="cart-product-subtotal">
+                                    <span class="amount">{{ $product->price }}</span>
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <form class="form-inline">
-                            <div class="input-group">
-                                <input type="text" placeholder="Coupon Code" id="CouponCode" class="form-control">
-                                <div class="input-group-append">
-                                    <button type="submit" id="widget-subscribe-submit-button" class="btn">Apply</button>
-                                </div>
-                            </div>
-                            <p class="small">Enter any valid coupon or promo code here to redeem your discount.</p>
-                        </form>
-                    </div>
-                    <div class="col-lg-8 text-right">
-                        <button type="button" class="btn">Update Card</button>
-                    </div>
-                </div>
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-4">--}}
+{{--                        <form class="form-inline">--}}
+{{--                            <div class="input-group">--}}
+{{--                                <input type="text" placeholder="Coupon Code" id="CouponCode" class="form-control">--}}
+{{--                                <div class="input-group-append">--}}
+{{--                                    <button type="submit" id="widget-subscribe-submit-button" class="btn">Apply</button>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <p class="small">Enter any valid coupon or promo code here to redeem your discount.</p>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-lg-8 text-right">--}}
+{{--                        <button type="button" class="btn">Update Card</button>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <div class="row">
                     <hr class="space">
                     <div class="col-lg-6">
@@ -462,7 +372,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <a href="#" class="btn icon-left float-right"><span>Proceed to Checkout</span></a>
+                        <a href="{{ route('client.checkout') }}" class="btn icon-left float-right"><span>Proceed to Checkout</span></a>
                     </div>
                 </div>
             </div>

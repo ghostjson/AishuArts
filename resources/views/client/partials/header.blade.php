@@ -33,7 +33,9 @@
                             <li><a href="{{ route('client.home') }}">Home</a></li>
                             <li><a href="{{ route('client.shop') }}">Shop</a></li>
                             <li><a href="{{ route('client.about') }}">About</a></li>
-                            <li><a href="{{ route('client.cart') }}">Cart<span class="badge badge-primary">1</span></a>
+                            <li><a href="{{ route('client.cart') }}">Cart
+                                    <span class="badge badge-primary">{{ count(session()->get('cart.products')) }}</span>
+                                </a>
                             </li>
 
                             @guest

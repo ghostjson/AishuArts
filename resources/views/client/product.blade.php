@@ -45,7 +45,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <h6>Add to Cart</h6>
-                                <a class="btn" href="#"><i class="icon-shopping-cart"></i> Add to cart</a>
+                                <a class="btn" href="{{ route('client.add_to_cart', $product->id) }}"><i class="icon-shopping-cart"></i> Add to cart</a>
                                 <a class="btn btn-dark" href="#"><i class="icon-shopping-bag"></i> Buy Now</a>
                             </div>
                         </div>
