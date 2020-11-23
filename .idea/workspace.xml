@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5e636e9-6397-4518-a977-1eb06b748f55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Helpers/SettingsHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_23_035705_create_settings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/shop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/SettingsHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/SettingsHelper.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +170,7 @@
       <workItem from="1605880501630" duration="8541000" />
       <workItem from="1605952705412" duration="4130000" />
       <workItem from="1605967647905" duration="7550000" />
-      <workItem from="1606101463184" duration="2318000" />
+      <workItem from="1606101463184" duration="2595000" />
     </task>
     <task id="LOCAL-00001" summary="add admin panel&#10;add product section &#10;add product new page">
       <created>1605854879574</created>
@@ -247,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605975616694</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="settings table added">
+      <created>1606104544510</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1606104544510</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +267,8 @@
     <MESSAGE value="application structure rearranged" />
     <MESSAGE value="authentication middlewares added" />
     <MESSAGE value="cart system implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="cart system implemented" />
+    <MESSAGE value="settings table added" />
+    <option name="LAST_COMMIT_MESSAGE" value="settings table added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605855717384">
@@ -285,11 +288,11 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="2264" y="59" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1605968684534" />
-    <state x="2081" y="0" key="CommitChangelistDialog2" timestamp="1605975615584">
+    <state x="2081" y="0" key="CommitChangelistDialog2" timestamp="1606104542378">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1605887931334" />
-    <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1605975615584" />
+    <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1606104542378" />
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1605889877987" />
     <state x="1965" y="0" key="DiffContextDialog" timestamp="1605968326004">
       <screen x="1920" y="0" width="1360" height="728" />

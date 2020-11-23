@@ -6,7 +6,7 @@ if (!function_exists('settings')) {
      * description
      *
      *
-     * @param string $key
+     * @param xstring $key
      * @return string
      */
     function settings(string $key)
@@ -26,7 +26,7 @@ if (!function_exists('settingsUpdate')) {
      * @param string $value
      * @return string
      */
-    function settings(string $key, string $value)
+    function settingsUpdate(string $key, string $value)
     {
         $settings = \App\Models\Setting::where('key', $key)
             ->first();
