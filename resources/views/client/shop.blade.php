@@ -68,15 +68,15 @@
                                     <div class="product-price">
                                         <ins>{{ $product->price }}</ins>
                                     </div>
-                                    <div class="product-rate">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                    <div class="product-reviews"><a href="#">6 customer reviews</a>
-                                    </div>
+{{--                                    <div class="product-rate">--}}
+{{--                                        <i class="fa fa-star"></i>--}}
+{{--                                        <i class="fa fa-star"></i>--}}
+{{--                                        <i class="fa fa-star"></i>--}}
+{{--                                        <i class="fa fa-star"></i>--}}
+{{--                                        <i class="fa fa-star-half-o"></i>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="product-reviews"><a href="#">6 customer reviews</a>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
                         </div>
