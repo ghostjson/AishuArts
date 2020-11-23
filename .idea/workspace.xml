@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5e636e9-6397-4518-a977-1eb06b748f55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/seeders/SettingsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Managers/ShippingController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateShiprocketRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modules/ShiprocketAPI.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_23_050402_create_orders_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/shipping.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/SettingsHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/SettingsHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Pages/AdminPagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Pages/AdminPagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/SettingsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/SettingsSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +184,10 @@
       <workItem from="1605880501630" duration="8541000" />
       <workItem from="1605952705412" duration="4130000" />
       <workItem from="1605967647905" duration="7550000" />
-      <workItem from="1606101463184" duration="3036000" />
+      <workItem from="1606101463184" duration="3166000" />
+      <workItem from="1606105369561" duration="4103000" />
+      <workItem from="1606128921366" duration="2173000" />
+      <workItem from="1606139587434" duration="1803000" />
     </task>
     <task id="LOCAL-00001" summary="add admin panel&#10;add product section &#10;add product new page">
       <created>1605854879574</created>
@@ -261,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606104874168</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="settings seeder implemented">
+      <created>1606105279186</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1606105279186</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +300,8 @@
     <MESSAGE value="cart system implemented" />
     <MESSAGE value="settings table added" />
     <MESSAGE value="fix settings function" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix settings function" />
+    <MESSAGE value="settings seeder implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="settings seeder implemented" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605855717384">
@@ -301,11 +321,11 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="2264" y="59" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1605968684534" />
-    <state x="2081" y="0" key="CommitChangelistDialog2" timestamp="1606104872640">
+    <state x="2081" y="0" key="CommitChangelistDialog2" timestamp="1606105277950">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1605887931334" />
-    <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1606104872640" />
+    <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1606105277950" />
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1605889877987" />
     <state x="1965" y="0" key="DiffContextDialog" timestamp="1605968326004">
       <screen x="1920" y="0" width="1360" height="728" />
@@ -323,16 +343,20 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="1976" y="0" key="SettingsEditor/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1606104954396" />
+    <state x="2246" y="204" width="925" height="692" key="dock-window-1" timestamp="1606142234706">
+      <screen x="1920" y="0" width="1360" height="728" />
+    </state>
+    <state x="2246" y="204" width="925" height="692" key="dock-window-1/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1606142234706" />
     <state x="2238" y="-6" width="691" height="728" key="find.popup" timestamp="1605968866877">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="409" y="22" width="718" height="780" key="find.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1605847675847" />
     <state x="2238" y="-6" width="691" height="728" key="find.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1605968866877" />
-    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup" timestamp="1606105218801">
+    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup" timestamp="1606142749025">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1605953502674" />
-    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1606105218801" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1606130097828" />
+    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1606142749025" />
     <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605889918328" />
   </component>
 </project>

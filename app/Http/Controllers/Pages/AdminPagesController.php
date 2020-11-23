@@ -33,4 +33,9 @@ class AdminPagesController extends Controller
     {
         return view('admin.products.edit', compact('product'));
     }
+
+    protected function shippingPage()
+    {
+        return view('admin.shipping');
+    }
 }

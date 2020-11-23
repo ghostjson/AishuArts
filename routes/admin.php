@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\Managers\ShippingController;
 use App\Http\Controllers\Pages\AdminPagesController;
 use App\Http\Controllers\Managers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -13,3 +14,10 @@ Route::get('/products/edit/{product}', [AdminPagesController::class, 'editProduc
 Route::post('/products/new', [ProductController::class, 'new'])->name('admin.products.new.post');
 Route::post('/products/edit/{product}', [ProductController::class, 'update'])->name('admin.products.edit.post');
 Route::delete('/products', [ProductController::class, 'delete'])->name('admin.products.delete');
+
+
+//shipment
+Route::get('/shipping', [AdminPagesController::class, 'shippingPage'])->name('admin.shipping');
+
+Route::post('/shipping', [ShippingController::class, 'updateShiprocketCredential'])->name('admin.shipping.update');
+Route::get('/shipping/refresh', [ShippingController::class, 'refreshShiprocketToken'])->name('admin.shipping.refresh');

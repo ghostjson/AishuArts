@@ -12,8 +12,7 @@ if (!function_exists('settings')) {
     function settings(string $key)
     {
         return \App\Models\Setting::where('key', $key)
-            ->first()
-            ->pluck('value');
+            ->first()->value;
     }
 }
 
@@ -30,7 +29,9 @@ if (!function_exists('settingsUpdate')) {
     {
         $settings = \App\Models\Setting::where('key', $key)
             ->first();
-        $settings->update(['value'=>$value]);
+        $settings->value = $value;
+        $settings->save();
+
         return $settings;
     }
 }

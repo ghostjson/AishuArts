@@ -16,8 +16,20 @@ class SettingsSeeder extends Seeder
     {
         $settings = [
             [
-                'key' => 'shiprock-token',
+                'key' => 'shiprocket-email',
+                'value' => 'imakhilravindran@gmail.com'
+            ],
+            [
+                'key' => 'shiprocket-password',
+                'value' => '17291234'
+            ],
+            [
+                'key' => 'shiprocket-token',
                 'value' => 'initial-key'
+            ],
+            [
+                'key' => 'shiprocket-api-endpoint',
+                'value' => 'https://apiv2.shiprocket.in/v1/external/'
             ]
         ];
 
