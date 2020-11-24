@@ -11,9 +11,13 @@ Route::get('/products', [AdminPagesController::class, 'productsPage'])->name('ad
 Route::get('/products/new', [AdminPagesController::class, 'createProductPage'])->name('admin.products.new');
 Route::get('/products/edit/{product}', [AdminPagesController::class, 'editProductPage'])->name('admin.products.edit');
 
+
 Route::post('/products/new', [ProductController::class, 'new'])->name('admin.products.new.post');
 Route::post('/products/edit/{product}', [ProductController::class, 'update'])->name('admin.products.edit.post');
 Route::delete('/products', [ProductController::class, 'delete'])->name('admin.products.delete');
+
+Route::get('/products/featured/{product}', [ProductController::class, 'featured'])->name('admin.products.featured');
+Route::get('/products/featured/remove/{product}', [ProductController::class, 'removeFeatured'])->name('admin.products.featured.remove');
 
 
 //shipment

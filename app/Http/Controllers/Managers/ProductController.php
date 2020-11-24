@@ -7,6 +7,7 @@ use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\DeleteProductRequest;
 use App\Http\Requests\EditProductRequest;
 use App\Models\Product;
+use http\Env\Request;
 use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
@@ -55,5 +56,21 @@ class ProductController extends Controller
             Log::error($exception);
             return redirect()->back()->withErrors(['Error in deletion']);
         }
+    }
+
+    public function featured(Product $product)
+    {
+        $product->featured = true;
+        $product->save();
+
+        return redirect()->back();
+    }
+
+    public function removeFeatured(Product $product)
+    {
+        $product->featured = false;
+        $product->save();
+
+        return redirect()->back();
     }
 }

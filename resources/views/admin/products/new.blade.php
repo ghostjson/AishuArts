@@ -24,6 +24,7 @@
                                 <label for="image">Product Image</label>
                                 <input type="file" name="image" class="form-control" id="image" >
                             </div>
+                            <input type="hidden" name="featured" value="0">
                             <div class="form-group">
                                 <label for="category">Category</label>
                                 <select name="category" class="form-control" id="category">

@@ -22,6 +22,7 @@ class CreateProductTable extends Migration
             $table->text('short_description');
             $table->longText('long_description');
             $table->string('image');
+            $table->boolean('featured');
             $table->timestamps();
         });
     }

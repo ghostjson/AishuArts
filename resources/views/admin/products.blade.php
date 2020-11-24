@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal"
+         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -59,11 +60,16 @@
                                     <th scope="row">
                                         <div class="media align-items-center">
                                             <a href="#" class="avatar mr-3">
-                                                <img alt="Image placeholder" style="width: 100%; height: 100%;" src="{{ $product->image }}">
+                                                <img alt="Image placeholder" style="width: 100%; height: 100%;"
+                                                     src="{{ $product->image }}">
                                             </a>
                                             <div class="media-body">
                                                 <a href="{{ route('client.product', $product->id) }}">
                                                     <span class="name mb-0 text-sm">{{ $product->name }}</span>
+
+                                                    @if($product->featured) <i class="fa fa-star"
+                                                                               aria-hidden="true"></i> @endif
+
                                                 </a>
                                             </div>
                                         </div>
@@ -84,8 +90,20 @@
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="{{ route('admin.products.edit', $product->id) }}">Edit</a>
-                                                <a class="dropdown-item" onclick="deleteProduct({{ $product->id }})" href="#"  data-toggle="modal" data-target="#deleteModal">Delete</a>
+                                                <a class="dropdown-item"
+                                                   href="{{ route('admin.products.edit', $product->id) }}">Edit</a>
+                                                @if($product->featured)
+                                                    <a class="dropdown-item"
+                                                       href="{{ route('admin.products.featured.remove', $product->id) }}"
+                                                       >Remove Featured</a>
+                                                @else
+                                                    <a class="dropdown-item"
+                                                       href="{{ route('admin.products.featured', $product->id) }}"
+                                                       >Make Featured</a>
+                                                @endif
+
+                                                <a class="dropdown-item" onclick="deleteProduct({{ $product->id }})"
+                                                   href="#" data-toggle="modal" data-target="#deleteModal">Delete</a>
                                                 {{--                                                <a class="dropdown-item" href="#">Something else here</a>--}}
                                             </div>
                                         </div>
@@ -114,10 +132,10 @@
                     {{--                                </li>--}}
                     {{--                                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
                     {{--                                <li class="page-item">--}}
-{{--                                                        <a class="page-link" href="#">--}}
-{{--                                                            <i class="fas fa-angle-right"></i>--}}
-{{--                                                            <span class="sr-only">Next</span>--}}
-{{--                                                        </a>--}}
+                    {{--                                                        <a class="page-link" href="#">--}}
+                    {{--                                                            <i class="fas fa-angle-right"></i>--}}
+                    {{--                                                            <span class="sr-only">Next</span>--}}
+                    {{--                                                        </a>--}}
                     {{--                                </li>--}}
                     {{--                            </ul>--}}
                     {{--                        </nav>--}}
@@ -131,7 +149,7 @@
 
 @section('scripts')
     <script>
-        $(document).ready( function () {
+        $(document).ready(function () {
             $('#productsTable').DataTable({
                 oLanguage: {
                     oPaginate: {
@@ -140,10 +158,10 @@
                     }
                 }
             });
-        } );
+        });
 
 
-        function deleteProduct (id) {
+        function deleteProduct(id) {
             console.log(id)
             $('#deleteInput').val(id);
         }

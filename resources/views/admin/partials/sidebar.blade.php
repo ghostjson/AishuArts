@@ -25,7 +25,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ menu('admin.orders') }}" href="{{ route('admin.orders') }}">
-                            <i class="fa fa-truck text-primary" aria-hidden="true"></i>
+                            <i class="ni ni-box-2 text-primary" aria-hidden="true"></i>
                             <span class="nav-link-text">Orders</span>
                         </a>
                     </li>

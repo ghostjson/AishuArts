@@ -4,7 +4,7 @@
         <div class="container">
             <!--Logo-->
             <div id="logo" style="width: 100px">
-                <img width="100px" src="{{ asset('images/logo.jpeg') }}" alt="">
+                <img width="100px" style="transform: rotate(20deg) scale(1.2)" src="{{ asset('images/logo.jpeg') }}" alt="">
             </div>
             <!--End: Logo-->
             <!-- Search -->
@@ -41,13 +41,13 @@
                                 </a>
                             </li>
 
-                            @guest
-                                <li><a href="{{ route('client.login') }}">Login</a></li>
-                                <li><a href="{{ route('client.register') }}">Register</a></li>
-                            @endguest
-                            @auth
-                                <li><a href="{{ route('client.logout') }}">Logout</a> </li>
-                            @endauth
+{{--                            @guest--}}
+{{--                                <li><a href="{{ route('client.login') }}">Login</a></li>--}}
+{{--                                <li><a href="{{ route('client.register') }}">Register</a></li>--}}
+{{--                            @endguest--}}
+{{--                            @auth--}}
+{{--                                <li><a href="{{ route('client.logout') }}">Logout</a> </li>--}}
+{{--                            @endauth--}}
                         </ul>
                     </nav>
                 </div>

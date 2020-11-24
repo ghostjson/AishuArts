@@ -52,4 +52,9 @@ class AdminPagesController extends Controller
 
         return view('admin.orders_view', compact(['order', 'products']));
     }
+
+    public function featuredPage()
+    {
+        return view('admin.products_featured');
+    }
 }

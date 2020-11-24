@@ -27,4 +27,9 @@ class Product extends Model
         return env('APP_URL') . '/storage/' . $value;
     }
 
+    public function getPriceAttribute($value)
+    {
+        return '₹' . $value;
+    }
+
 }
