@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Managers\AuthController;
 use App\Http\Controllers\Managers\CartController;
+use App\Http\Controllers\Managers\OrderController;
 use App\Http\Controllers\Pages\AuthPagesController;
 use App\Http\Controllers\Pages\ShopPagesController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,9 @@ Route::get('/checkout-complete', [ShopPagesController::class, 'checkoutPage'])->
 
 Route::get('/cart/add-to-cart/{product}', [CartController::class, 'addToCart'])->name('client.add_to_cart');
 Route::get('/cart/remove-from-cart/{product}', [CartController::class, 'removeFromCart'])->name('client.remove_from_cart');
+Route::get('/cart/clear', [CartController::class, 'clearCart'])->name('client.cart.clear');
+
+Route::post('/order/place', [OrderController::class, 'placeOrder'])->name('client.order.place');
 
 // Authentication
 Route::get('/login', [AuthPagesController::class, 'loginPage'])->name('client.login');

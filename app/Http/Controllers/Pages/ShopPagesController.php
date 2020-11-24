@@ -32,9 +32,17 @@ class ShopPagesController extends Controller
         return view('client.cart', compact('products'));
     }
 
-    public function checkoutPage()
+    public function checkoutPage(Request $request)
     {
-        return view('client.checkout');
+        $ids = $request->session()->get('cart.products');
+
+        if(is_null($ids)){
+            return redirect()->back();
+        }else{
+            $products = Product::find($ids);
+        }
+
+        return view('client.checkout', compact(['products']));
     }
 
     public function checkoutCompletePage()

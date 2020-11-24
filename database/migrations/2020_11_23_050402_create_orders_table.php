@@ -15,7 +15,6 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->longText('pickup_location');
 
             $table->string('billing_customer_name');
             $table->text('billing_address');
@@ -26,10 +25,10 @@ class CreateOrdersTable extends Migration
             $table->string('billing_country');
             $table->string('billing_email');
             $table->string('billing_phone');
-            $table->string('billing_alternate_phone')->nullable();
-            $table->boolean('shipping_is_billing')->default(true);
             $table->string('payment_method');
             $table->json('products');
+
+            $table->string('status');
 
             $table->timestamps();
         });

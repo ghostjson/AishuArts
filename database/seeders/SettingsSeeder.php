@@ -30,6 +30,10 @@ class SettingsSeeder extends Seeder
             [
                 'key' => 'shiprocket-api-endpoint',
                 'value' => 'https://apiv2.shiprocket.in/v1/external/'
+            ],
+            [
+                'key' => 'shiprocket-pickup-location',
+                'value' => 'pickup'
             ]
         ];
 

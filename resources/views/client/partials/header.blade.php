@@ -3,11 +3,12 @@
     <div class="header-inner">
         <div class="container">
             <!--Logo-->
-            <div id="logo"><a href="index.html"><span class="logo-default">POLO</span><span
-                        class="logo-dark">POLO</span></a></div>
+            <div id="logo" style="width: 100px">
+                <img width="100px" src="{{ asset('images/logo.jpeg') }}" alt="">
+            </div>
             <!--End: Logo-->
             <!-- Search -->
-            <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i
+            <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><<i>
                         class="icon-x"></i></a>
                 <form class="search-form" action="search-results-page.html" method="get">
                     <input class="form-control" name="q" type="text" placeholder="Type & Search..."/>

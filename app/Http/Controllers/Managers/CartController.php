@@ -29,4 +29,10 @@ class CartController extends Controller
         $request->session()->put('cart.products', $products);
         return redirect()->back();
     }
+
+    public function clearCart()
+    {
+        session()->forget('cart.products');
+        return redirect()->back();
+    }
 }
