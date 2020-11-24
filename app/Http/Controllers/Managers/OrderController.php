@@ -24,4 +24,9 @@ class OrderController extends Controller
 
         return redirect()->route('client.home');
     }
+
+    public function cancelOrder($order_id)
+    {
+
+    }
 }

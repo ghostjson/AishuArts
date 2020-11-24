@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Models\Product;
 
 class AdminPagesController extends Controller
@@ -37,5 +38,18 @@ class AdminPagesController extends Controller
     protected function shippingPage()
     {
         return view('admin.shipping');
+    }
+
+    public function ordersPage()
+    {
+        $orders = Order::all();
+        return view('admin.orders', compact('orders'));
+    }
+
+    public function orderView(Order $order)
+    {
+        $products = Product::find(json_decode($order->products));
+
+        return view('admin.orders_view', compact(['order', 'products']));
     }
 }

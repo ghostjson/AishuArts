@@ -21,3 +21,7 @@ Route::get('/shipping', [AdminPagesController::class, 'shippingPage'])->name('ad
 
 Route::post('/shipping', [ShippingController::class, 'updateShiprocketCredential'])->name('admin.shipping.update');
 Route::get('/shipping/refresh', [ShippingController::class, 'refreshShiprocketToken'])->name('admin.shipping.refresh');
+
+//orders
+Route::get('/orders', [AdminPagesController::class, 'ordersPage'])->name('admin.orders');
+Route::get('/orders/{order}', [AdminPagesController::class, 'orderView'])->name('admin.orders.view');
