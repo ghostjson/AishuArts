@@ -32,4 +32,9 @@ class Product extends Model
         return '₹' . $value;
     }
 
+    public function getCategoryAttribute($value)
+    {
+        return Category::find($value)->name;
+    }
+
 }

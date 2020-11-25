@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\Managers\CategoryController;
 use App\Http\Controllers\Managers\ShippingController;
 use App\Http\Controllers\Pages\AdminPagesController;
 use App\Http\Controllers\Managers\ProductController;
@@ -19,6 +20,11 @@ Route::delete('/products', [ProductController::class, 'delete'])->name('admin.pr
 Route::get('/products/featured/{product}', [ProductController::class, 'featured'])->name('admin.products.featured');
 Route::get('/products/featured/remove/{product}', [ProductController::class, 'removeFeatured'])->name('admin.products.featured.remove');
 
+
+//category
+Route::get('/category', [AdminPagesController::class, 'categoryPage'])->name('admin.category');
+Route::post('/category', [CategoryController::class, 'create'])->name('admin.category.post');
+Route::delete('/category', [CategoryController::class, 'delete'])->name('admin.category.delete');
 
 //shipment
 Route::get('/shipping', [AdminPagesController::class, 'shippingPage'])->name('admin.shipping');

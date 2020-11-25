@@ -6,7 +6,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        New Product
+                        New Category
                     </div>
 
                     <div class="container">
@@ -28,9 +28,9 @@
                             <div class="form-group">
                                 <label for="category">Category</label>
                                 <select name="category" class="form-control" id="category">
-                                    @foreach($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @endforeach
+                                    <option>Category 1</option>
+                                    <option>Category 2</option>
+                                    <option>Category 3</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -59,4 +59,5 @@
             </div>
         </div>
     </div>
+
 @endsection

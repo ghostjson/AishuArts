@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
 
@@ -27,7 +28,8 @@ class AdminPagesController extends Controller
 
     public function createProductPage()
     {
-        return view('admin.products.new');
+        $categories = Category::all();
+        return view('admin.products.new', compact('categories'));
     }
 
     public function editProductPage(Product $product)
@@ -56,5 +58,11 @@ class AdminPagesController extends Controller
     public function featuredPage()
     {
         return view('admin.products_featured');
+    }
+
+    public function categoryPage()
+    {
+        $categories = Category::all();
+        return view('admin.category', compact('categories'));
     }
 }

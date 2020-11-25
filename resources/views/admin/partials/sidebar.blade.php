@@ -36,6 +36,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {{ menu('admin.category') }}" href="{{ route('admin.category') }}">
+                            <i class="ni ni-bullet-list-67 text-primary" aria-hidden="true"></i>
+                            <span class="nav-link-text">Categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('client.logout') }}">
                             <i class="ni ni-user-run text-primary"></i>
                             <span class="nav-link-text">Logout</span>
