@@ -22,8 +22,8 @@
         <div class="container">
             <div>
                 <div class="text-center m-b-30">
-                    <a href="index.html" class="logo">
-                        <img src="{{ asset('images/logo-dark.png') }}" alt="Polo Logo">
+                    <a href="{{ route('client.home') }}" class="logo">
+{{--                        <img src="{{ asset('images/logo.jpeg') }}" alt="Polo Logo">--}}
                     </a>
                 </div>
                 <div class="row">
@@ -53,8 +53,8 @@
                                 <button type="submit" class="btn">Login</button>
                             </div>
                         </form>
-                        <p class="small">Don't have an account yet? <a href="#">Register New Account</a>
-                        </p>
+{{--                        <p class="small">Don't have an account yet? <a href="#">Register New Account</a>--}}
+{{--                        </p>--}}
                     </div>
                 </div>
             </div>
