@@ -4,7 +4,7 @@
         <div class="container">
             <!--Logo-->
             <div id="logo" style="width: 100px">
-                <img width="100px" style="transform: rotate(20deg) scale(1.2)" src="{{ asset('images/logo.jpeg') }}" alt="">
+                <img width="100px" style="transform: rotate(20deg) scale(1.2); margin-left: 30px !important;" src="{{ asset('images/logo.jpeg') }}" alt="">
             </div>
             <!--End: Logo-->
             <!-- Search -->

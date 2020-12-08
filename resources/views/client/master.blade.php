@@ -13,6 +13,13 @@
     <!-- Stylesheets & Fonts -->
     <link href="{{ asset('css/plugins.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <style>
+        {{--section{--}}
+        {{--    background-image: url('{{ asset('images/pattern.jpeg') }}');--}}
+        {{--}--}}
+    </style>
+
 </head>
 
 <body>

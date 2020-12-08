@@ -9,13 +9,16 @@
                     <div class="col-lg-5">
                         <div class="product-image">
                             <!-- Carousel slider -->
-                            <div class=" dots-inside dots-dark arrows-visible" data-items="1" data-loop="true" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-autoplay="2500" data-lightbox="gallery">
-                                <a href="{{ $product->image }}" data-lightbox="image" title="Shop product image!"><img alt="Shop product image!" src="{{ $product->image }}">
+                            <div class="carousel dots-inside dots-dark arrows-visible" data-items="1" data-loop="true" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-autoplay="2500" data-lightbox="gallery">
+                                <a href="{{ $product->image }}" data-lightbox="image" title="{{ $product->name }}"><img alt="Shop product image!" src="{{ $product->image }}">
+                                </a>
+                                <a href="{{ $product->image }}" data-lightbox="image" title="{{ $product->name }}"><img alt="Shop product image!" src="{{ $product->image }}">
                                 </a>
                             </div>
                             <!-- Carousel slider -->
                         </div>
                     </div>
+
                     <div class="col-lg-7">
                         <div class="product-description">
                             <div class="product-category">{{ $product->category }}</div>
@@ -25,14 +28,14 @@
                             <div class="product-price"><ins>{{ $product->price }}</ins>
                             </div>
                             <div class="product-rate">
-{{--                                <i class="fa fa-star"></i>--}}
-{{--                                <i class="fa fa-star"></i>--}}
-{{--                                <i class="fa fa-star"></i>--}}
-{{--                                <i class="fa fa-star"></i>--}}
-{{--                                <i class="fa fa-star-half-o"></i>--}}
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
                             </div>
                             <div class="product-reviews">
-{{--                                <a href="#">3 customer reviews</a>--}}
+                                <a href="#">3 customer reviews</a>
                             </div>
                             <div class="seperator m-b-10"></div>
                             <p>{{ $product->short_description }}</p>
@@ -51,7 +54,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- Product additional tabs -->
+
+            <!-- Product additional tabs -->
                 <div class="tabs tabs-folder">
                     <ul class="nav nav-tabs" id="myTab3" role="tablist">
                         <li class="nav-item">
@@ -60,6 +64,9 @@
                         <li class="nav-item">
                             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="true"><i class="fa fa-info"></i>Additional
                                 Info</a></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false"><i class="fa fa-star"></i>Reviews</a></a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent3">
@@ -99,6 +106,83 @@
                                 </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="comments" id="comments">
+                                <div class="comment_number">
+                                    Reviews <span>(3)</span>
+                                </div>
+                                <div class="comment-list">
+                                    <!-- Comment -->
+                                    <div class="comment" id="comment-1">
+                                        <div class="image"><img alt="" src="images/blog/author.jpg" class="avatar">
+                                        </div>
+                                        <div class="text">
+                                            <div class="product-rate">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <h5 class="name">John Doe</h5>
+                                            <span class="comment_date">Posted at 15:32h, 06 December</span>
+                                            <a class="comment-reply-link" href="#">Reply</a>
+                                            <div class="text_holder">
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    industry. Lorem Ipsum has been the industry's standard dummy
+                                                    text ever since the 1500s.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end: Comment -->
+                                    <!-- Comment -->
+                                    <div class="comment" id="comment-1-1">
+                                        <div class="image"><img alt="" src="images/blog/author2.jpg" class="avatar">
+                                        </div>
+                                        <div class="text">
+                                            <div class="product-rate">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <h5 class="name">John Doe</h5>
+                                            <span class="comment_date">Posted at 15:32h, 06 December</span>
+                                            <a class="comment-reply-link" href="#">Reply</a>
+                                            <div class="text_holder">
+                                                <p>It is a long established fact that a reader will be distracted by
+                                                    the readable content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end: Comment -->
+                                    <!-- Comment -->
+                                    <div class="comment" id="comment-1-2">
+                                        <div class="image"><img alt="" src="images/blog/author3.jpg" class="avatar">
+                                        </div>
+                                        <div class="text">
+                                            <div class="product-rate">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                            <h5 class="name">John Doe</h5>
+                                            <span class="comment_date">Posted at 15:32h, 06 December</span>
+                                            <a class="comment-reply-link" href="#">Reply</a>
+                                            <div class="text_holder">
+                                                <p>There are many variations of passages of Lorem Ipsum available,
+                                                    but the majority have suffered alteration in some form, by
+                                                    injected humour.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end: Comment -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
