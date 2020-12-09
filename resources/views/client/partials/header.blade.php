@@ -4,7 +4,8 @@
         <div class="container">
             <!--Logo-->
             <div id="logo" style="width: 100px">
-                <img width="100px" style="transform: rotate(20deg) scale(1.2); margin-left: 30px !important;" src="{{ asset('images/logo.jpeg') }}" alt="">
+                <img width="100px" style="transform: rotate(20deg) scale(1.2); margin-left: 30px !important;"
+                     src="{{ asset('images/logo.jpeg') }}" alt="">
             </div>
             <!--End: Logo-->
             <!-- Search -->
@@ -34,20 +35,27 @@
                             <li><a href="{{ route('client.home') }}">Home</a></li>
                             <li><a href="{{ route('client.shop') }}">Shop</a></li>
                             <li><a href="{{ route('client.about') }}">About</a></li>
+                            @guest
+                                <li><a href="{{ route('client.login') }}">Signin</a></li>
+                            @endguest
+                            @auth
+                                <li><a href="{{ route('client.logout') }}">Logout</a></li>
+                            @endauth
                             <li><a href="{{ route('client.cart') }}">Cart
                                     @if(!is_null(session()->get('cart.products')))
-                                        <span class="badge badge-primary">{{ count(session()->get('cart.products')) }}</span>
+                                        <span
+                                            class="badge badge-primary">{{ count(session()->get('cart.products')) }}</span>
                                     @endif
                                 </a>
                             </li>
 
-{{--                            @guest--}}
-{{--                                <li><a href="{{ route('client.login') }}">Login</a></li>--}}
-{{--                                <li><a href="{{ route('client.register') }}">Register</a></li>--}}
-{{--                            @endguest--}}
-{{--                            @auth--}}
-{{--                                <li><a href="{{ route('client.logout') }}">Logout</a> </li>--}}
-{{--                            @endauth--}}
+                            {{--                            @guest--}}
+                            {{--                                <li><a href="{{ route('client.login') }}">Login</a></li>--}}
+                            {{--                                <li><a href="{{ route('client.register') }}">Register</a></li>--}}
+                            {{--                            @endguest--}}
+                            {{--                            @auth--}}
+                            {{--                                <li><a href="{{ route('client.logout') }}">Logout</a> </li>--}}
+                            {{--                            @endauth--}}
                         </ul>
                     </nav>
                 </div>

@@ -20,5 +20,12 @@ class UserSeeder extends Seeder
         $user->password = bcrypt('17291234');
         $user->role = 'admin';
         $user->save();
+
+        $user = new User();
+        $user->name = 'user';
+        $user->email = 'user@aishuarts.com';
+        $user->password = bcrypt('17291234');
+        $user->role = 'user';
+        $user->save();
     }
 }

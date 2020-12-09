@@ -1,7 +1,6 @@
 #TODO
     -> add to cart option product list cheyune cardill thanne
     -> rating system
-    -> logo fix in mobile view
     -> email client setup
     -> multiple images
     -> open first signature (https://www.symates.com/amazonstore)

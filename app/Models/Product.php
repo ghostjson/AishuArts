@@ -17,6 +17,7 @@ class Product extends Model
 
     public $guarded = [];
 
+
     public function setImageAttribute(UploadedFile $file)
     {
         $this->attributes['image'] = fileUploader($file);
@@ -27,14 +28,14 @@ class Product extends Model
         return env('APP_URL') . '/storage/' . $value;
     }
 
-    public function getPriceAttribute($value)
-    {
-        return '₹' . $value;
-    }
-
     public function getCategoryAttribute($value)
     {
         return Category::find($value)->name;
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 
 }

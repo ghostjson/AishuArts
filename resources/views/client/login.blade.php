@@ -52,6 +52,8 @@
                             <div class="text-left form-group">
                                 <button type="submit" class="btn">Login</button>
                             </div>
+                            <small>Don't have an account <a href="#">register here</a></small>
+
                         </form>
 {{--                        <p class="small">Don't have an account yet? <a href="#">Register New Account</a>--}}
 {{--                        </p>--}}

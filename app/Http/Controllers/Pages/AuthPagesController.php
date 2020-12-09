@@ -11,6 +11,10 @@ class AuthPagesController extends Controller
 
     public function loginPage()
     {
-        return view('client.login');
+        if(is_null(auth()->user())){
+            return view('client.login');
+        }else{
+            return redirect()->route('client.home');
+        }
     }
 }

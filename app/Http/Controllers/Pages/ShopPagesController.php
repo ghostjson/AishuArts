@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class ShopPagesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['checkoutPage']);
+    }
+
     public function shopPage()
     {
         $products = Product::all();
@@ -34,6 +39,7 @@ class ShopPagesController extends Controller
 
     public function checkoutPage(Request $request)
     {
+
         $ids = $request->session()->get('cart.products');
 
         if(is_null($ids)){
