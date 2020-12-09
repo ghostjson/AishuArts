@@ -13,4 +13,9 @@ class ClientPagesController extends Controller
         $featured = Product::where('featured', 1)->get();
         return view('client.home', compact('featured'));
     }
+
+    public function profilePage()
+    {
+        return view('client.profile');
+    }
 }

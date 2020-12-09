@@ -15,7 +15,7 @@
                                 </div>
                                 <div class="col-lg-12 form-group">
                                     <label class="sr-only">Country</label>
-                                    <select name="billing_country"  value="India">
+                                    <select disabled name="billing_country"  value="India">
                                         <option >Åland Islands</option>
                                         <option >Afghanistan</option>
                                         <option >Albania</option>

@@ -24,7 +24,6 @@ class CreateOrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'billing_country' => 'required',
             'billing_customer_name' => 'required',
             'billing_address' => 'required',
             'billing_address_2' => 'required',

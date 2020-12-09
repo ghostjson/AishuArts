@@ -14,7 +14,7 @@ class AddMoreFieldsToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('country')->nullable();
+            $table->string('country')->default('India');
             $table->string('address1')->nullable();
             $table->string('address2')->nullable();
             $table->string('city')->nullable();

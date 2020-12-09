@@ -13,7 +13,6 @@ class OrderController extends Controller
     public function placeOrder(CreateOrderRequest $request, ShiprocketAPI $shiprocketAPI)
     {
         $user = User::find(auth()->user()->id);
-        $user->country = $request->input('billing_country');
         $user->address1 = $request->input('billing_address');
         $user->address2 = $request->input('billing_address_2');
         $user->city = $request->input('billing_city');
@@ -26,6 +25,7 @@ class OrderController extends Controller
         $billing = $request->validated();
         $billing['products'] = json_encode(session('cart.products'));
         $billing['status'] = 'processing';
+        $billing['billing_country'] = 'India'; #change if want international shipping
 
         $order = Order::create($billing);
 

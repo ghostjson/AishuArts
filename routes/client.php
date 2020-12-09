@@ -11,9 +11,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ClientPagesController::class, 'homePage'])->name('client.home');
 
-Route::get('/about', function () {
-    return view('client.home');
-})->name('client.about');
+Route::get('/about', [ClientPagesController::class, 'homePage'])->name('client.about');
+Route::get('/profile', [ClientPagesController::class, 'profilePage'])->name('client.profile');
+
+Route::post('/profile', [AuthController::class, 'profileUpdate'])->name('client.profile.update');
 
 
 //shop
