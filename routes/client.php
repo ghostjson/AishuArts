@@ -28,6 +28,7 @@ Route::get('/cart/add-to-cart/{product}', [CartController::class, 'addToCart'])-
 Route::get('/cart/remove-from-cart/{product}', [CartController::class, 'removeFromCart'])->name('client.remove_from_cart');
 Route::get('/cart/clear', [CartController::class, 'clearCart'])->name('client.cart.clear');
 
+Route::get('/orders', [ClientPagesController::class, 'ordersPage'])->name('client.orders');
 Route::post('/order/place', [OrderController::class, 'placeOrder'])->name('client.order.place');
 
 // Authentication

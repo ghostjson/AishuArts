@@ -39,6 +39,7 @@
                                 <li><a href="{{ route('client.login') }}">Signin</a></li>
                             @endguest
                             @auth
+                                <li><a href="{{ route('client.orders') }}">Orders</a></li>
                                 <li><a href="{{ route('client.profile') }}">Profile</a></li>
                                 <li><a href="{{ route('client.logout') }}">Logout</a></li>
                             @endauth

@@ -30,7 +30,11 @@ class CreateOrdersTable extends Migration
 
             $table->string('status');
 
+            $table->bigInteger('user_id');
+
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
         });
     }
 

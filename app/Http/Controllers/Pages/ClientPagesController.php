@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -17,5 +18,11 @@ class ClientPagesController extends Controller
     public function profilePage()
     {
         return view('client.profile');
+    }
+
+    public function ordersPage()
+    {
+        $orders = Order::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
+        return view('client.orders', compact('orders'));
     }
 }
