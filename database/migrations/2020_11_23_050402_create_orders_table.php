@@ -28,9 +28,9 @@ class CreateOrdersTable extends Migration
             $table->string('payment_method');
             $table->json('products');
 
-            $table->string('status');
-
             $table->bigInteger('user_id');
+
+
 
             $table->timestamps();
 

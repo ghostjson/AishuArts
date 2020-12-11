@@ -5,11 +5,19 @@
     <section id="shop-checkout">
         <form method="post" action="{{ route('client.order.place') }}" class="sep-top-md">
 
+
             <div class="container">
                 <div class="shop-cart">
                     <div class="row">
+                        <div class="col-md-12">
+                            @include('partials.error')
+                        </div>
+                    </div>
+                    <div class="row">
+
                         <div class="col-lg-6 no-padding">
                             <div class="row">
+
                                 <div class="col-lg-12">
                                     <h4 class="upper">Billing & Shipping Address</h4>
                                 </div>

@@ -38,6 +38,11 @@ class ShiprocketAPI
         }
     }
 
+    /**
+     * Create a shiprocket order
+     * @param $order
+     * @return false|string
+     */
     public function createOrder($order)
     {
         $order_items = [];
@@ -67,7 +72,7 @@ class ShiprocketAPI
                     'Authorization' => 'Bearer ' . settings('shiprocket-token')
                 ],
                 'form_params' => [
-                    'order_id' => $order->id,
+                    'order_id' => $order->order_id,
                     'order_date' => Carbon::parse($order->created_at)->format('Y-m-d'),
                     'pickup_location' => settings('shiprocket-pickup-location'),
                     'billing_customer_name' => $order->billing_customer_name,
@@ -90,11 +95,11 @@ class ShiprocketAPI
                     'weight' => 10
                 ]
             ]);
-            return $request->getBody()->getContents();
+            return json_decode($request->getBody()->getContents());
 
         } catch (GuzzleException $e) {
             Log::error($e);
-            dd($e);
+            return false;
         }
 
     }

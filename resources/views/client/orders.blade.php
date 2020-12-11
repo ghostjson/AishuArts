@@ -5,7 +5,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col">
-                <h3>Order</h3>
+                <h3>Orders</h3>
             </div>
         </div>
         <div class="row mt-3" style="min-height: 50vh;">
@@ -33,7 +33,7 @@
                                     @endforeach
                                 </ul>
                             </td>
-                            <td>{{ $order->status }}</td>
+                            <td>{{ $order->shiprocket_status }}</td>
                             <td>{{ $order->created_at }}</td>
                         </tr>
                     @endforeach

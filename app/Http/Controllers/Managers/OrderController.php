@@ -28,11 +28,22 @@ class OrderController extends Controller
         $billing['status'] = 'processing';
         $billing['billing_country'] = 'India'; #change if want international shipping
         $billing['user_id'] = auth()->id();
+        $billing['order_id'] = uniqid();
 
 
         $order = Order::create($billing);
 
-        $shiprocketAPI->createOrder($order);
+        $response = $shiprocketAPI->createOrder($order);
+
+        if(!$response) return redirect()->back()->withErrors(['Error placing order, contact site owner']);
+
+        $response = (array)$response;
+
+        $order->shiprocket_order_id = $response['order_id'];
+        $order->shiprocket_shipment_id = $response['shipment_id'];
+        $order->shiprocket_status = $response['status'];
+
+        $order->save();
 
         session()->forget('cart.products');
 
