@@ -36,6 +36,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {{ menu('admin.payment') }}" href="{{ route('admin.payment') }}">
+                            <i class="fas fa-money-bill-alt text-primary" aria-hidden="true"></i>
+                            <span class="nav-link-text">Payment</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ menu('admin.category') }}" href="{{ route('admin.category') }}">
                             <i class="ni ni-bullet-list-67 text-primary" aria-hidden="true"></i>
                             <span class="nav-link-text">Categories</span>

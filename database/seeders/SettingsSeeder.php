@@ -34,6 +34,14 @@ class SettingsSeeder extends Seeder
             [
                 'key' => 'shiprocket-pickup-location',
                 'value' => 'pickup'
+            ],
+            [
+                'key' => 'cashfree-secret-key',
+                'value' => 'fb31aa1c284b42021e54394321c919f78560342b'
+            ],
+            [
+                'key' => 'cashfree-app-id',
+                'value' => '4559347901cf8f4596b981ba739554'
             ]
         ];
 

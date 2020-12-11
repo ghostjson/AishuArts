@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5e636e9-6397-4518-a977-1eb06b748f55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_10_082512_add_shiprocket_fields_to_orders_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdatePaymentRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/payment.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Managers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Managers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Pages/ClientPagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Pages/ClientPagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Modules/ShiprocketAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/ShiprocketAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_23_050402_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_23_050402_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/orders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/orders.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Pages/AdminPagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Pages/AdminPagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/SettingsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/SettingsSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +193,7 @@
       <workItem from="1607587296588" duration="2484000" />
       <workItem from="1607616332788" duration="609000" />
       <workItem from="1607677227339" duration="2106000" />
-      <workItem from="1607698102056" duration="642000" />
+      <workItem from="1607698102056" duration="3006000" />
     </task>
     <task id="LOCAL-00001" summary="add admin panel&#10;add product section &#10;add product new page">
       <created>1605854879574</created>
@@ -356,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607532770557</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="order status page added">
+      <created>1607700255800</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1607700255800</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,9 +394,14 @@
     <MESSAGE value="simple auth added,&#10;checkout user implemeted" />
     <MESSAGE value="add profile page" />
     <MESSAGE value="created order page" />
-    <option name="LAST_COMMIT_MESSAGE" value="created order page" />
+    <MESSAGE value="order status page added" />
+    <option name="LAST_COMMIT_MESSAGE" value="order status page added" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2231" y="63" key="#Log_Highlighting_(ideolog)" timestamp="1607703069886">
+      <screen x="1920" y="0" width="1360" height="728" />
+    </state>
+    <state x="2231" y="63" key="#Log_Highlighting_(ideolog)/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1607703069886" />
     <state x="361" y="62" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605855717384">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -404,15 +416,15 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="2173" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1605969308659" />
-    <state x="2264" y="59" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606318729864">
+    <state x="2264" y="59" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607702489308">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
-    <state x="2264" y="59" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1606318729864" />
-    <state x="2081" y="0" key="CommitChangelistDialog2" timestamp="1607532768951">
+    <state x="2264" y="59" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1607702489308" />
+    <state x="2081" y="0" key="CommitChangelistDialog2" timestamp="1607700254148">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1605887931334" />
-    <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1607532768951" />
+    <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1607700254148" />
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1606235620965" />
     <state x="1965" y="0" key="DiffContextDialog" timestamp="1605968326004">
       <screen x="1920" y="0" width="1360" height="728" />
@@ -448,11 +460,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="341" y="183" width="840" height="1034" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606228616826" />
-    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup" timestamp="1607679255430">
+    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup" timestamp="1607703104456">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1606317012102" />
-    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1607679255430" />
+    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1607703104456" />
     <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606235455602" />
   </component>
 </project>

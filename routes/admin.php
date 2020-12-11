@@ -5,6 +5,7 @@ use App\Http\Controllers\Managers\CategoryController;
 use App\Http\Controllers\Managers\ShippingController;
 use App\Http\Controllers\Pages\AdminPagesController;
 use App\Http\Controllers\Managers\ProductController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AdminPagesController::class, 'dashboard'])->name('admin.dashboard');
@@ -28,10 +29,14 @@ Route::delete('/category', [CategoryController::class, 'delete'])->name('admin.c
 
 //shipment
 Route::get('/shipping', [AdminPagesController::class, 'shippingPage'])->name('admin.shipping');
-
 Route::post('/shipping', [ShippingController::class, 'updateShiprocketCredential'])->name('admin.shipping.update');
+
 Route::get('/shipping/refresh', [ShippingController::class, 'refreshShiprocketToken'])->name('admin.shipping.refresh');
 
 //orders
 Route::get('/orders', [AdminPagesController::class, 'ordersPage'])->name('admin.orders');
 Route::get('/orders/{order}', [AdminPagesController::class, 'orderView'])->name('admin.orders.view');
+
+//payment
+Route::get('/payment', [AdminPagesController::class, 'paymentPage'])->name('admin.payment');
+Route::post('/shipping', [PaymentController::class, 'updatePaymentCredentials'])->name('admin.payment.update');
