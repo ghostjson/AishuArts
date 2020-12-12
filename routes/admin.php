@@ -39,4 +39,4 @@ Route::get('/orders/{order}', [AdminPagesController::class, 'orderView'])->name(
 
 //payment
 Route::get('/payment', [AdminPagesController::class, 'paymentPage'])->name('admin.payment');
-Route::post('/shipping', [PaymentController::class, 'updatePaymentCredentials'])->name('admin.payment.update');
+Route::post('/payment', [PaymentController::class, 'updatePaymentCredentials'])->name('admin.payment.update');

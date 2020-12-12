@@ -55,4 +55,5 @@ class ShopPagesController extends Controller
     {
         return view('client.checkout_completed');
     }
+
 }

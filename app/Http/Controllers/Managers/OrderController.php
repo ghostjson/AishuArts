@@ -25,7 +25,6 @@ class OrderController extends Controller
 
         $billing = $request->validated();
         $billing['products'] = json_encode(session('cart.products'));
-        $billing['status'] = 'processing';
         $billing['billing_country'] = 'India'; #change if want international shipping
         $billing['user_id'] = auth()->id();
         $billing['order_id'] = uniqid();
