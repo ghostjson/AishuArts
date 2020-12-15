@@ -29,7 +29,9 @@ Route::get('/cart/add-to-cart/{product}', [CartController::class, 'addToCart'])-
 Route::get('/cart/remove-from-cart/{product}', [CartController::class, 'removeFromCart'])->name('client.remove_from_cart');
 Route::get('/cart/clear', [CartController::class, 'clearCart'])->name('client.cart.clear');
 
-Route::get('/orders', [ClientPagesController::class, 'ordersPage'])->name('client.orders');
+Route::get('/orders/history', [ClientPagesController::class, 'OrdersHistoryPage'])->name('client.orders.history');
+Route::get('/orders/current', [ClientPagesController::class, 'OrdersCurrentPage'])->name('client.orders.current');
+
 Route::post('/order/place', [OrderController::class, 'placeOrder'])->name('client.order.place');
 
 // Authentication
@@ -44,3 +46,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('client.logout');
 
 //cashfree
 Route::post('/payment-redirect', [PaymentController::class, 'paymentSuccess'])->name('client.payment_redirect');
+
+
+//depreciated
+Route::get('/orders', [ClientPagesController::class, 'ordersPage'])->name('client.orders');

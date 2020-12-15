@@ -26,4 +26,16 @@ class ClientPagesController extends Controller
             ->latest()->limit(20)->get();
         return view('client.orders', compact('orders'));
     }
+
+    public function OrdersCurrentPage()
+    {
+        return view('client.orders_current');
+    }
+
+    public function OrdersHistoryPage()
+    {
+        $orders = Order::where('user_id', auth()->id())->orderBy('created_at', 'desc')
+            ->latest()->limit(20)->get();
+        return view('client.orders_history', compact('orders'));
+    }
 }
