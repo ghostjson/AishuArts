@@ -5,36 +5,46 @@ namespace App\Http\Controllers\Managers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateOrderRequest;
 use App\Models\Order;
+use App\Models\Product;
 use App\Models\User;
 use App\Modules\ShiprocketAPI;
+use http\Env\Request;
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\URL;
 
 class OrderController extends Controller
 {
     public function placeOrder(CreateOrderRequest $request, ShiprocketAPI $shiprocketAPI)
     {
         $user = User::find(auth()->user()->id);
-        $user->address1 = $request->input('billing_address');
-        $user->address2 = $request->input('billing_address_2');
-        $user->city = $request->input('billing_city');
-        $user->state = $request->input('billing_state');
-        $user->zip = $request->input('billing_pincode');
-        $user->phone = $request->input('billing_phone');
+        $this->saveUserDetails($user, $request);
 
-        $user->save();
+        if ($request->input('payment_method') === 'COD') {
+            return $this->placeOrderUsingCOD($request, $shiprocketAPI);
+        } else {
+            return $this->placeOrderUsingPrepaid($request, $shiprocketAPI);
+        }
+    }
 
+    private function placeOrderUsingPrepaid(CreateOrderRequest $request, ShiprocketAPI $shiprocketAPI)
+    {
 
-        $billing = $request->validated();
-        $billing['products'] = json_encode(session('cart.products'));
-        $billing['billing_country'] = 'India'; #change if want international shipping
-        $billing['user_id'] = auth()->id();
-        $billing['order_id'] = uniqid();
+        $order = $this->postOrder($request);
+        $total_price = Product::find(json_decode($order->products))->sum('price');
 
+        $signature = $this->generateSignature($order, $total_price);
 
-        $order = Order::create($billing);
+        return view('client.cashfree_checkout', compact(['order', 'total_price', 'signature']));
+    }
+
+    private function placeOrderUsingCOD(CreateOrderRequest $request, ShiprocketAPI $shiprocketAPI)
+    {
+
+        $order = $this->postOrder($request);
 
         $response = $shiprocketAPI->createOrder($order);
 
-        if(!$response) return redirect()->back()->withErrors(['Error placing order, contact site owner']);
+        if (!$response) return redirect()->back()->withErrors(['Error placing order, contact site owner']);
 
         $response = (array)$response;
 
@@ -46,10 +56,62 @@ class OrderController extends Controller
 
         session()->forget('cart.products');
 
-        return redirect()->route('client.home');
+        return redirect()->route('client.complete_checkout', $order->id);
     }
 
-    public function cancelOrder($order_id)
+    private function postOrder(FormRequest $request)
+    {
+        $billing = $request->validated();
+        $billing['products'] = json_encode(session('cart.products'));
+        $billing['billing_country'] = 'India'; #change if want international shipping
+        $billing['user_id'] = auth()->id();
+        $billing['order_id'] = uniqid();
+
+
+        return Order::create($billing);
+    }
+
+    private function saveUserDetails(User $user, FormRequest $request)
+    {
+        $user->address1 = $request->input('billing_address');
+        $user->address2 = $request->input('billing_address_2');
+        $user->city = $request->input('billing_city');
+        $user->state = $request->input('billing_state');
+        $user->zip = $request->input('billing_pincode');
+        $user->phone = $request->input('billing_phone');
+
+        $user->save();
+    }
+
+    private function generateSignature($order, int $total_price) : string
+    {
+        $secretKey = settings('cashfree-secret-key');
+        $postData = array(
+            "appId" => settings('cashfree-app-id'),
+            "orderId" => $order->id,
+            "orderAmount" => $total_price,
+            "orderCurrency" => 'INR',
+            "customerName" => $order->user->name,
+            "customerPhone" => $order->user->phone,
+            "customerEmail" => $order->user->email,
+            "returnUrl" => route('client.payment_redirect'),
+            "notifyUrl" => route('client.payment_redirect'),
+        );
+        // get secret key from your config
+        ksort($postData);
+        $signatureData = "";
+        foreach ($postData as $key => $value) {
+            $signatureData .= $key . $value;
+        }
+
+        $signature = hash_hmac('sha256', $signatureData, $secretKey, true);
+        $signature = base64_encode($signature);
+
+        return$signature;
+    }
+
+    public
+    function cancelOrder($order_id)
     {
 
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -51,9 +52,9 @@ class ShopPagesController extends Controller
         return view('client.checkout', compact(['products']));
     }
 
-    public function checkoutCompletePage()
+    public function checkoutCompletePage(Order $order)
     {
-        return view('client.checkout_completed');
+        return view('client.checkout_completed', compact('order'));
     }
 
 }
