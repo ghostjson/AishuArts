@@ -46,7 +46,7 @@
                                                         @endforeach
                                                     </ul>
                                                 </td>
-                                                <td>{{ $order->shiprocket_status }}</td>
+                                                <td>{{ $order->tracking }}</td>
                                                 <td>{{ $order->created_at }}</td>
                                             </tr>
                                         @endforeach

@@ -18,6 +18,8 @@ class AddShiprocketFieldsToOrdersTable extends Migration
             $table->string('shiprocket_shipment_id')->nullable();
             $table->string('shiprocket_status')->nullable();
             $table->string('order_id')->nullable();
+
+            $table->string('tracking')->default('Pending');
         });
     }
 

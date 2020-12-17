@@ -1,7 +1,6 @@
 @extends('client.master')
 
 @section('content')
-    <!-- end: Page title -->
     <!-- SHOP CHECKOUT COMPLETED -->
     <section id="shop-checkout-completed" style="height: 80vh; display: flex; align-items: center">
         <div class="container">
@@ -13,7 +12,7 @@
                             <mark>view your order</mark>
                         </a> when you are logged in.</p>
                 </div>
-                <a href="{{ route('client.orders') }}" class="btn icon-left m-r-10"><span>Go to Order Page</span></a><a class="btn icon-left" href="{{ route('client.shop') }}"><span>Return To Shop</span></a>
+                <a href="{{ route('client.orders.current') }}" class="btn icon-left m-r-10"><span>Go to Order Page</span></a><a class="btn icon-left" href="{{ route('client.shop') }}"><span>Return To Shop</span></a>
             </div>
         </div>
     </section>

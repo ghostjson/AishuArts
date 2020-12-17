@@ -56,7 +56,7 @@ class OrderController extends Controller
 
         session()->forget('cart.products');
 
-        return redirect()->route('client.complete_checkout', $order->id);
+        return redirect()->route('client.checkout_completed',$order->id);
     }
 
     private function postOrder(FormRequest $request)

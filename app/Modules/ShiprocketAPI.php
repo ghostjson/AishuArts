@@ -3,6 +3,7 @@
 namespace App\Modules;
 
 
+use App\Models\Order;
 use App\Models\Product;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
@@ -102,6 +103,60 @@ class ShiprocketAPI
             return false;
         }
 
+    }
+
+    public function updateOrdersStatus()
+    {
+        $orders = Order::all();
+
+        foreach ($orders as $order) {
+            if (!is_null($order->shiprocket_order_id)) {
+                $order_id = $order->shiprocket_order_id;
+                try {
+
+                    $request2 = $this->client->get('/v1/external/courier/track/shipment/' . $order_id, [
+                        'headers' => [
+                            'Authorization' => 'Bearer ' . settings('shiprocket-token')
+                        ],
+                    ]);
+
+                    $data2 = (json_decode($request2->getBody()->getContents(), true));
+
+                    $track = $data2['tracking_data']['track_status'];
+                    switch ($track) {
+                        case 0:
+                            $order->tracking = 'Pending';
+                            break;
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                            $order->tracking = 'Confirmed';
+                            break;
+                        case 6:
+                        case 17:
+                            $order->tracking = 'Shipped';
+                            break;
+                        case 7:
+                            $order->tracking = 'Delivered';
+                            break;
+                        case 8:
+                            $order->tracking = 'Cancelled';
+                            break;
+
+                    }
+
+                    $order->save();
+
+                } catch (GuzzleException $e) {
+                    Log::error($e);
+                }
+
+            }
+        }
+
+//
     }
 
 }

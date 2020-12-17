@@ -1,26 +1,28 @@
-<div class="col pt-4 pb-4">
-    <h6>Order ID: OD45345345435</h6>
-    <article class="card">
-        <div class="card-body row">
-            <div class="col"><strong>Estimated Delivery time:</strong> <br>29 nov 2019</div>
-            <div class="col"><strong>Shipping BY:</strong> <br> BLUEDART, | <i class="fa fa-phone"></i> +1598675986
+@foreach($orders as $order)
+    <div class="col pt-4 pb-4">
+        <h6>ID: {{ $order->id }}</h6>
+        <article class="card">
+            <div class="card-body row">
+                <div class="col"><strong>Name:</strong> <br>{{ $order->billing_customer_name }}</div>
+                <div class="col"><strong>Payment Method:</strong> <br> {{ $order->payment_method }}
+                </div>
+                <div class="col"><strong>Status:</strong> <br> {{ $order->tracking }}</div>
+                <div class="col"><strong>Tracking #:</strong> <br> {{ $order->shiprocket_order_id }}</div>
             </div>
-            <div class="col"><strong>Status:</strong> <br> Picked by the courier</div>
-            <div class="col"><strong>Tracking #:</strong> <br> BD045903594059</div>
+        </article>
+        <div class="track">
+            <div class="step {{ orderTrackActive($order->tracking, 'Confirmed') }}"><span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span>
+            </div>
+            <div class="step {{ orderTrackActive($order->tracking, 'PickedUp') }}"><span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span>
+            </div>
+            <div class="step {{ orderTrackActive($order->tracking, 'OnTheWay') }}"><span class="icon"> <i class="fa fa-truck"></i> </span> <span
+                    class="text"> On the way </span></div>
+            <div class="step {{ orderTrackActive($order->tracking, 'Delivered') }}"><span class="icon"> <i class="fa fa-box"></i> </span> <span
+                    class="text">Delivered</span></div>
         </div>
-    </article>
-    <div class="track">
-        <div class="step active"><span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span>
-        </div>
-        <div class="step active"><span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span>
-        </div>
-        <div class="step"><span class="icon"> <i class="fa fa-truck"></i> </span> <span
-                class="text"> On the way </span></div>
-        <div class="step"><span class="icon"> <i class="fa fa-box"></i> </span> <span
-                class="text">Ready for pickup</span></div>
     </div>
-</div>
-<hr>
+    <hr>
+@endforeach
 
 <style>
     .card {
