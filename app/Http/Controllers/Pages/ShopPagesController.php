@@ -51,6 +51,8 @@ class ShopPagesController extends Controller
             $ids = $request->session()->get('cart.products');
         }else{
             $ids = [$product->id];
+            $request->session()->forget('cart_products');
+            $request->session()->put('cart.products', $ids);
         }
 
 

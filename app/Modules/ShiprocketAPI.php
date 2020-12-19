@@ -94,7 +94,7 @@ class ShiprocketAPI
                     'length' => 10,
                     'height' => 10,
                     'breadth' => 10,
-                    'weight' => 10
+                    'weight' => 0.5
                 ]
             ]);
             return json_decode($request->getBody()->getContents());
