@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\CanReviews;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -22,7 +23,8 @@ class ShopPagesController extends Controller
 
     public function productPage(Product $product)
     {
-        return view('client.product', compact('product'));
+        $can_user_review = $this->canReview($product->id);
+        return view('client.product', compact(['product', 'can_user_review']));
     }
 
     public function cartPage(Request $request)
@@ -55,6 +57,15 @@ class ShopPagesController extends Controller
     public function checkoutCompletePage(Order $order)
     {
         return view('client.checkout_completed', compact('order'));
+    }
+
+    private function canReview(int $product_id){
+        if(CanReviews::where('product_id', $product_id)
+            ->where('user_id', auth()->id())->exists()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

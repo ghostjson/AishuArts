@@ -45,4 +45,13 @@ class ClientPagesController extends Controller
 
         return view('client.orders_history', compact('orders'));
     }
+
+    public function reviewPage(Product $product)
+    {
+        if($product->canReview()){
+            return view('client.review', compact('product'));
+        }else{
+            return redirect()->route('client.product', $product->id);
+        }
+    }
 }

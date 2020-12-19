@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Managers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateOrderRequest;
+use App\Http\Requests\CreateReviewRequest;
+use App\Models\CanReviews;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\User;
 use App\Modules\ShiprocketAPI;
 use http\Env\Request;
@@ -110,9 +113,29 @@ class OrderController extends Controller
         return$signature;
     }
 
-    public
-    function cancelOrder($order_id)
+    public function cancelOrder($order_id)
     {
+
+    }
+
+    public function addReview(CreateReviewRequest $request, Product $product)
+    {
+        if(!$product->canReview()){
+            abort(404);
+        }
+
+        $review = new Review();
+        $review->product_id = $product->id;
+        $review->user_id = auth()->id();
+
+        $review->rating = $request->input('rating');
+        $review->review = $request->input('review');
+
+        $review->save();
+
+        CanReviews::removePermissionToReview($product->id, auth()->id());
+
+        return redirect()->route('client.product', $product->id);
 
     }
 }

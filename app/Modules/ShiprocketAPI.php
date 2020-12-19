@@ -3,6 +3,7 @@
 namespace App\Modules;
 
 
+use App\Events\OrderDelivered;
 use App\Models\Order;
 use App\Models\Product;
 use Carbon\Carbon;
@@ -107,7 +108,8 @@ class ShiprocketAPI
 
     public function updateOrdersStatus()
     {
-        $orders = Order::all();
+        $orders = Order::where('tracking', '!=', 'Delivered')
+            ->where('tracking', '!=', 'Canceled')->get();
 
         foreach ($orders as $order) {
             if (!is_null($order->shiprocket_order_id)) {
@@ -123,6 +125,7 @@ class ShiprocketAPI
                     $data2 = (json_decode($request2->getBody()->getContents(), true));
 
                     $track = $data2['tracking_data']['track_status'];
+                    $track = 7;
                     switch ($track) {
                         case 0:
                             $order->tracking = 'Pending';
@@ -140,9 +143,10 @@ class ShiprocketAPI
                             break;
                         case 7:
                             $order->tracking = 'Delivered';
+                            OrderDelivered::dispatch($order);
                             break;
                         case 8:
-                            $order->tracking = 'Cancelled';
+                            $order->tracking = 'Canceled';
                             break;
 
                     }

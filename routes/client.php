@@ -34,6 +34,9 @@ Route::get('/orders/current', [ClientPagesController::class, 'OrdersCurrentPage'
 
 Route::post('/order/place', [OrderController::class, 'placeOrder'])->name('client.order.place');
 
+Route::get('/review/{product}', [ClientPagesController::class, 'reviewPage'])->name('client.review');
+Route::post('/review/{product}', [OrderController::class, 'addReview'])->name('client.review.post');
+
 // Authentication
 Route::get('/login', [AuthPagesController::class, 'loginPage'])->name('client.login');
 Route::get('/register', function () {

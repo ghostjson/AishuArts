@@ -68,13 +68,9 @@
                                         <ins>{{ $product->price }}</ins>
                                     </div>
                                     <div class="product-rate">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
+                                        @include('client.partials.product_rating')
                                     </div>
-                                    <div class="product-reviews"><a href="#">6 customer reviews</a>
+                                    <div class="product-reviews"><a href="#">{{ $product->reviews->count() }} customer reviews</a>
                                     </div>
                                 </div>
                             </div>
