@@ -326,7 +326,9 @@
                                     @foreach($products as $product)
                                         <tr>
                                             <td class="cart-product-thumbnail">
-                                                <div class="cart-product-thumbnail-name">{{ $product->name }}</div>
+                                                <div class="cart-product-thumbnail-name">
+                                                    <a href="{{ route('client.product', $product->id) }}">{{ $product->name }}</a>
+                                                </div>
                                             </td>
 
                                             <td class="cart-product-subtotal">

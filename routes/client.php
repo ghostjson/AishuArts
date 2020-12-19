@@ -25,6 +25,8 @@ Route::get('/cart', [ShopPagesController::class, 'cartPage'])->name('client.cart
 Route::get('/checkout', [ShopPagesController::class, 'checkoutPage'])->name('client.checkout');
 Route::get('/checkout-complete/{order}', [ShopPagesController::class, 'checkoutCompletePage'])->name('client.checkout_completed');
 
+Route::get('/buy/{product}', [ShopPagesController::class, 'buyNow'])->name('client.product.buy');
+
 Route::get('/cart/add-to-cart/{product}', [CartController::class, 'addToCart'])->name('client.add_to_cart');
 Route::get('/cart/remove-from-cart/{product}', [CartController::class, 'removeFromCart'])->name('client.remove_from_cart');
 Route::get('/cart/clear', [CartController::class, 'clearCart'])->name('client.cart.clear');

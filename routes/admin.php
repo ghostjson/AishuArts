@@ -8,35 +8,40 @@ use App\Http\Controllers\Managers\ProductController;
 use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [AdminPagesController::class, 'dashboard'])->name('admin.dashboard');
-Route::get('/products', [AdminPagesController::class, 'productsPage'])->name('admin.products');
-Route::get('/products/new', [AdminPagesController::class, 'createProductPage'])->name('admin.products.new');
-Route::get('/products/edit/{product}', [AdminPagesController::class, 'editProductPage'])->name('admin.products.edit');
+Route::middleware('admin')->group(function (){
+
+    Route::get('/', [AdminPagesController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/products', [AdminPagesController::class, 'productsPage'])->name('admin.products');
+    Route::get('/products/new', [AdminPagesController::class, 'createProductPage'])->name('admin.products.new');
+    Route::get('/products/edit/{product}', [AdminPagesController::class, 'editProductPage'])->name('admin.products.edit');
 
 
-Route::post('/products/new', [ProductController::class, 'new'])->name('admin.products.new.post');
-Route::post('/products/edit/{product}', [ProductController::class, 'update'])->name('admin.products.edit.post');
-Route::delete('/products', [ProductController::class, 'delete'])->name('admin.products.delete');
+    Route::post('/products/new', [ProductController::class, 'new'])->name('admin.products.new.post');
+    Route::post('/products/edit/{product}', [ProductController::class, 'update'])->name('admin.products.edit.post');
+    Route::delete('/products', [ProductController::class, 'delete'])->name('admin.products.delete');
 
-Route::get('/products/featured/{product}', [ProductController::class, 'featured'])->name('admin.products.featured');
-Route::get('/products/featured/remove/{product}', [ProductController::class, 'removeFeatured'])->name('admin.products.featured.remove');
+    Route::get('/products/featured/{product}', [ProductController::class, 'featured'])->name('admin.products.featured');
+    Route::get('/products/featured/remove/{product}', [ProductController::class, 'removeFeatured'])->name('admin.products.featured.remove');
 
 
 //category
-Route::get('/category', [AdminPagesController::class, 'categoryPage'])->name('admin.category');
-Route::post('/category', [CategoryController::class, 'create'])->name('admin.category.post');
-Route::delete('/category', [CategoryController::class, 'delete'])->name('admin.category.delete');
+    Route::get('/category', [AdminPagesController::class, 'categoryPage'])->name('admin.category');
+    Route::post('/category', [CategoryController::class, 'create'])->name('admin.category.post');
+    Route::delete('/category', [CategoryController::class, 'delete'])->name('admin.category.delete');
 
 //shipment
-Route::get('/shipping', [AdminPagesController::class, 'shippingPage'])->name('admin.shipping');
-Route::post('/shipping', [ShippingController::class, 'updateShiprocketCredential'])->name('admin.shipping.update');
+    Route::get('/shipping', [AdminPagesController::class, 'shippingPage'])->name('admin.shipping');
+    Route::post('/shipping', [ShippingController::class, 'updateShiprocketCredential'])->name('admin.shipping.update');
 
-Route::get('/shipping/refresh', [ShippingController::class, 'refreshShiprocketToken'])->name('admin.shipping.refresh');
+    Route::get('/shipping/refresh', [ShippingController::class, 'refreshShiprocketToken'])->name('admin.shipping.refresh');
 
 //orders
-Route::get('/orders', [AdminPagesController::class, 'ordersPage'])->name('admin.orders');
-Route::get('/orders/{order}', [AdminPagesController::class, 'orderView'])->name('admin.orders.view');
+    Route::get('/orders', [AdminPagesController::class, 'ordersPage'])->name('admin.orders');
+    Route::get('/orders/{order}', [AdminPagesController::class, 'orderView'])->name('admin.orders.view');
 
 //payment
-Route::get('/payment', [AdminPagesController::class, 'paymentPage'])->name('admin.payment');
-Route::post('/payment', [PaymentController::class, 'updatePaymentCredentials'])->name('admin.payment.update');
+    Route::get('/payment', [AdminPagesController::class, 'paymentPage'])->name('admin.payment');
+    Route::post('/payment', [PaymentController::class, 'updatePaymentCredentials'])->name('admin.payment.update');
+
+});
+

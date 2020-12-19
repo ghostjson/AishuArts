@@ -48,10 +48,9 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <h6>Add to Cart</h6>
                                 <a class="btn" href="{{ route('client.add_to_cart', $product->id) }}"><i
                                         class="icon-shopping-cart"></i> Add to cart</a>
-                                <a class="btn btn-dark" href="#"><i class="icon-shopping-bag"></i> Buy Now</a>
+                                <a class="btn btn-dark" href="{{ route('client.product.buy', $product->id) }}"><i class="icon-shopping-bag"></i> Buy Now</a>
                                 @if($can_user_review)
                                     <a class="btn btn-secondary" href="{{ route('client.review', $product->id) }}"><i
                                             class="fas fa-edit"></i> Write a review</a>

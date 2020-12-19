@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\URL;
  * @method static find($id)
  * @method static paginate(int $int)
  * @property mixed price
+ * @property mixed id
  */
 class Product extends Model
 {

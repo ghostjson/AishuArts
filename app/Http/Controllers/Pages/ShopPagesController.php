@@ -40,10 +40,19 @@ class ShopPagesController extends Controller
         return view('client.cart', compact('products'));
     }
 
-    public function checkoutPage(Request $request)
+    public function buyNow(Request $request, Product $product)
     {
+        return $this->checkoutPage($request, $product);
+    }
 
-        $ids = $request->session()->get('cart.products');
+    public function checkoutPage(Request $request,Product $product=null)
+    {
+        if(is_null($product)){
+            $ids = $request->session()->get('cart.products');
+        }else{
+            $ids = [$product->id];
+        }
+
 
         if(is_null($ids)){
             return redirect()->back();
