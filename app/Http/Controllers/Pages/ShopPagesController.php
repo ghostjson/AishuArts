@@ -17,7 +17,7 @@ class ShopPagesController extends Controller
 
     public function shopPage()
     {
-        $products = Product::all();
+        $products = Product::paginate(12);
         return view('client.shop', compact('products'));
     }
 

@@ -65,7 +65,7 @@
                                         <h3><a href="#">{{ $product->name }}</a></h3>
                                     </div>
                                     <div class="product-price">
-                                        <ins>{{ $product->price }}</ins>
+                                        <ins>{{ $product->priceWithCurrency() }}</ins>
                                     </div>
                                     <div class="product-rate">
                                         @include('client.partials.product_rating')
@@ -78,16 +78,17 @@
                     @endforeach
                 </div>
                 <hr>
+                {{ $products->links() }}
                 <!-- Pagination -->
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
-                </ul>
+{{--                <ul class="pagination">--}}
+{{--                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>--}}
+{{--                    <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+{{--                    <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+{{--                    <li class="page-item active"><a class="page-link" href="#">3</a></li>--}}
+{{--                    <li class="page-item"><a class="page-link" href="#">4</a></li>--}}
+{{--                    <li class="page-item"><a class="page-link" href="#">5</a></li>--}}
+{{--                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>--}}
+{{--                </ul>--}}
                 <!-- end: Pagination -->
             </div>
         </div>

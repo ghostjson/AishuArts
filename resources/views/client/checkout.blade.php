@@ -330,7 +330,7 @@
                                             </td>
 
                                             <td class="cart-product-subtotal">
-                                                <span class="amount">{{ $product->price }}</span>
+                                                <span class="amount">{{ $product->priceWithCurrency() }}</span>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -350,7 +350,7 @@
                                                     <strong>Order Subtotal</strong>
                                                 </td>
                                                 <td class="cart-product-name text-right">
-                                                    <span class="amount">{{ $products->sum('price') }}</span>
+                                                    <span class="amount">{{ settings('currency') . $products->sum('price') }}</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -375,7 +375,7 @@
                                                 </td>
                                                 <td class="cart-product-name text-right">
                                                     <span
-                                                        class="amount color lead"><strong>{{ $products->sum('price') }}</strong></span>
+                                                        class="amount color lead"><strong>{{ settings('currency') . $products->sum('price') }}</strong></span>
                                                 </td>
                                             </tr>
                                             </tbody>

@@ -10,6 +10,10 @@ class CartController extends Controller
 {
     public function addToCart(Request $request, Product $product)
     {
+        if($this->isProductInCart($request, $product->id)){
+            return redirect()->back();
+        }
+
         $request->session()->push('cart.products', $product->id);
         return redirect()->back();
     }
@@ -34,5 +38,20 @@ class CartController extends Controller
     {
         session()->forget('cart.products');
         return redirect()->back();
+    }
+
+    private function isProductInCart(Request $request,int $product_id){
+        $products =  $request->session()->get('cart.products');
+
+        if(is_null($products)) return false;
+
+        foreach ($products as $index => $pr)
+        {
+            if($pr == $product_id){
+                return true;
+            }
+        }
+
+        return false;
     }
 }

@@ -30,7 +30,7 @@
                                 <h3><a href="#">{{ $product->name }}</a></h3>
                             </div>
                             <div class="product-price">
-                                <ins>{{ $product->price }}</ins>
+                                <ins>{{ $product->priceWithCurrency() }}</ins>
                             </div>
                             <div class="product-rate">
                                 @include('client.partials.product_rating')

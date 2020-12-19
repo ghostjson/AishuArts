@@ -41,7 +41,7 @@
                                 {{--                                </div>--}}
                                 {{--                            </td>--}}
                                 <td class="cart-product-subtotal">
-                                    <span class="amount">{{ $product->price }}</span>
+                                    <span class="amount">{{ $product->priceWithCurrency() }}</span>
                                 </td>
                             </tr>
                         @endforeach

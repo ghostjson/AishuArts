@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\URL;
 /**
  * @method static create(array $validated)
  * @method static find($id)
+ * @method static paginate(int $int)
+ * @property mixed price
  */
 class Product extends Model
 {
@@ -47,7 +49,14 @@ class Product extends Model
             ->where('product_id', $this->id)->exists()
         ){
             return true;
+        }else{
+            return false;
         }
+    }
+
+    public function priceWithCurrency()
+    {
+        return settings('currency') . $this->price;
     }
 
     public function reviews()

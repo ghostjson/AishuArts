@@ -42,6 +42,10 @@ class SettingsSeeder extends Seeder
             [
                 'key' => 'cashfree-app-id',
                 'value' => '4559347901cf8f4596b981ba739554'
+            ],
+            [
+                'key' => 'currency',
+                'value' => '₹'
             ]
         ];
 
