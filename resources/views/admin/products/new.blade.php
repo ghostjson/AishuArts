@@ -21,8 +21,16 @@
                                 <input type="text" name="name" class="form-control" id="name" >
                             </div>
                             <div class="form-group">
-                                <label for="image">Product Image</label>
-                                <input type="file" name="image" class="form-control" id="image" >
+                                <label for="image">Product Image 1</label>
+                                <input type="file" name="image1" class="form-control" id="image" multiple>
+                            </div>
+                            <div class="form-group">
+                                <label for="image">Product Image 2</label>
+                                <input type="file" name="image2" class="form-control" id="image" multiple>
+                            </div>
+                            <div class="form-group">
+                                <label for="image">Product Image 3</label>
+                                <input type="file" name="image3" class="form-control file" id="image" >
                             </div>
                             <input type="hidden" name="featured" value="0">
                             <div class="form-group">

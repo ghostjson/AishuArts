@@ -1,6 +1,8 @@
 @extends('client.master')
 
 @section('content')
+
+
     <!-- SHOP PRODUCT PAGE -->
     <section id="product-page" class="product-page p-b-0">
         <div class="container">
@@ -12,12 +14,11 @@
                             <div class="carousel dots-inside dots-dark arrows-visible" data-items="1" data-loop="true"
                                  data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut"
                                  data-autoplay="2500" data-lightbox="gallery">
-                                <a href="{{ $product->image }}" data-lightbox="image" title="{{ $product->name }}"><img
-                                        alt="Shop product image!" src="{{ $product->image }}">
-                                </a>
-                                <a href="{{ $product->image }}" data-lightbox="image" title="{{ $product->name }}"><img
-                                        alt="Shop product image!" src="{{ $product->image }}">
-                                </a>
+                                @foreach($product->images as $image)
+                                    <a href="{{ $image }}" data-lightbox="image" title="{{ $product->name }}"><img
+                                            alt="Shop product image!" src="{{ $image }}">
+                                    </a>
+                                @endforeach
                             </div>
                             <!-- Carousel slider -->
                         </div>

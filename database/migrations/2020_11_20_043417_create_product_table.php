@@ -21,7 +21,9 @@ class CreateProductTable extends Migration
             $table->string('price');
             $table->text('short_description');
             $table->longText('long_description');
-            $table->string('image');
+            $table->string('image1');
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
             $table->boolean('featured');
             $table->timestamps();
         });

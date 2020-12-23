@@ -1,7 +1,7 @@
 #TODO
     -> add to cart option product list cheyune cardill thanne
-    -> rating system
+//    -> rating system
     -> email client setup
     -> multiple images
     -> open first signature (https://www.symates.com/amazonstore)
-    -> payment gateway
+//    -> payment gateway

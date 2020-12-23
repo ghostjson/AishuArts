@@ -30,7 +30,9 @@ class EditProductRequest extends FormRequest
             'price' => 'required',
             'short_description' => 'required',
             'long_description' => 'required',
-            'image' => 'nullable'
+            'images1' => 'nullable',
+            'images2' => 'nullable',
+            'images3' => 'nullable',
         ];
     }
 }

@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\URL;
  * @method static paginate(int $int)
  * @property mixed price
  * @property mixed id
+ * @property mixed image1
+ * @property mixed image2
+ * @property mixed image3
  */
 class Product extends Model
 {
@@ -21,14 +24,37 @@ class Product extends Model
     public $guarded = [];
 
 
-    public function setImageAttribute(UploadedFile $file)
+    public function setImage1Attribute(UploadedFile $file)
     {
-        $this->attributes['image'] = fileUploader($file);
+        $this->attributes['image1'] = fileUploader($file);
+    }
+    public function setImage2Attribute(UploadedFile $file)
+    {
+        $this->attributes['image2'] = fileUploader($file);
+    }
+    public function setImage3Attribute(UploadedFile $file)
+    {
+        $this->attributes['image3'] = fileUploader($file);
     }
 
-    public function getImageAttribute($value)
+    public function getImageAttribute()
     {
-        return env('APP_URL') . '/storage/' . $value;
+        return env('APP_URL') . '/storage/' . $this->image1;
+    }
+
+    public function getImagesAttribute()
+    {
+        $images = ['image1','image2','image3'];
+
+        $image_urls = [];
+
+        foreach ($images as $image){
+            if(!is_null($this[$image])){
+                array_push($image_urls, env('APP_URL') . '/storage/' . $this[$image]);
+            }
+        }
+
+        return $image_urls;
     }
 
     public function getCategoryAttribute($value)
