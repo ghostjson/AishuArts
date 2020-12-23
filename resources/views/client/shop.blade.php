@@ -2,6 +2,23 @@
 
 @section('content')
     <!-- Shop products -->
+    <style>
+        .product-cart{
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            height: 30px;
+            left: 12px;
+            line-height: 28px;
+            position: absolute;
+            text-align: center;
+            top: 12px;
+            width: 30px;
+            z-index: 3;
+        }
+        .product-cart a{
+            color: var(--primary) !important;
+        }
+    </style>
     <section>
         <div class="container">
             <div class="row m-b-20">
@@ -52,8 +69,8 @@
                                     </a>
                                     <a><img alt="Shop product image!" src="{{ $product->image }}">
                                     </a>
-                                    <span class="product-wishlist">
-                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                    <span class="product-cart">
+                                        <a href="{{ route('client.add_to_cart', $product->id) }}"><i class="fas fa-shopping-cart"></i></a>
                                     </span>
                                     <div class="product-overlay">
                                         <a>Quick View</a>

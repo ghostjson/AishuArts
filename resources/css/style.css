@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*  Mixins */
 /*  Fonts */
-/* --------------------------------------------------------------- 
+/* ---------------------------------------------------------------
    Google Fonts
 -----------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,400,500,600,700,800|Nunito:300,400,600,700,800");
@@ -6279,8 +6279,8 @@ Portfolio
   text-align: center;
   top: 12px;
   width: 30px;
-  z-index: -1;
-  opacity: 0;
+  z-index: 3;
+  opacity: 1;
 }
 .product:hover .product-wishlist,
 .product:hover .product-wishlist a {
@@ -11978,7 +11978,7 @@ a.btn:not([href]):not([tabindex]).disabled {
 .disabled .btn {
   opacity: .3;
 }
-/* 
+/*
 @media (max-width: 1024px) {
   button.btn:not(.btn-creative):not(.btn-slide),
   .btn:not(.close):not(.mfp-close):not(.btn-creative):not(.btn-slide),
@@ -16063,7 +16063,7 @@ Forms - Dark
        text-align: center;
        font-size: 1.5em;
      } */
-  /* 
+  /*
 background-color: #fff;
   border-radius: 6px;
   width: auto;
@@ -16089,7 +16089,7 @@ width: 140px; */
      } */
 }
 
-/* 
+/*
 .floating-mobile-menu {
     position: fixed;
     bottom: -61px;
