@@ -53,7 +53,7 @@
                                             <div class="form-group">
                                                 <label class="form-control-label" for="input-full-name">Phone Number</label>
                                                 <input name="phone" type="text" id="input-full-name" class="form-control"
-                                                       placeholder="Full Name" value="{{ auth()->user()->phone }}">
+                                                       placeholder="Phone Number" value="{{ auth()->user()->phone }}">
                                             </div>
                                         </div>
 

@@ -10,9 +10,9 @@ use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [ClientPagesController::class, 'homePage'])->name('client.home');
+Route::get('/', [ShopPagesController::class, 'shopPage'])->name('client.home');
 
-Route::get('/about', [ClientPagesController::class, 'homePage'])->name('client.about');
+Route::get('/about', [ClientPagesController::class, 'aboutPage'])->name('client.about');
 Route::get('/profile', [ClientPagesController::class, 'profilePage'])->name('client.profile');
 
 Route::post('/profile', [AuthController::class, 'profileUpdate'])->name('client.profile.update');

@@ -16,6 +16,11 @@ class ClientPagesController extends Controller
         return view('client.home', compact('featured'));
     }
 
+    public function aboutPage()
+    {
+        return view('client.about');
+    }
+
     public function profilePage()
     {
         return view('client.profile');

@@ -4,22 +4,22 @@
 
 
     <!-- SECTION HOME  -->
-    <section class="fullscreen" style="background: url('images/parallax/13.jpg')">
-        <div class="container">
-            <div class="text-left">
-                <h1 class="text-uppercase">
-						<span class="text-md font-weight-800 counter">
-							<span data-speed="2000" data-refresh-interval="80" data-to="70" data-from="0"
-                                  data-seperator="true"></span>% OFF</span>
-                    <br>
-                    <span class="m-t-20">Summer collection 2015</span>
-                </h1>
-                <div class="text-seperator text-seperator-small"></div>
-                <p class="lead">New Arrivals from $19,99</p>
-                <a href="#" class="btn btn-red">View Collection</a>
-            </div>
-        </div>
-    </section>
+{{--    <section class="fullscreen" style="background: url('images/parallax/13.jpg')">--}}
+{{--        <div class="container">--}}
+{{--            <div class="text-left">--}}
+{{--                <h1 class="text-uppercase">--}}
+{{--						<span class="text-md font-weight-800 counter">--}}
+{{--							<span data-speed="2000" data-refresh-interval="80" data-to="70" data-from="0"--}}
+{{--                                  data-seperator="true"></span>% OFF</span>--}}
+{{--                    <br>--}}
+{{--                    <span class="m-t-20">Summer collection 2015</span>--}}
+{{--                </h1>--}}
+{{--                <div class="text-seperator text-seperator-small"></div>--}}
+{{--                <p class="lead">New Arrivals from $19,99</p>--}}
+{{--                <a href="#" class="btn btn-red">View Collection</a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- end: SECTION HOME -->
 
     @include('client.partials.featured')

@@ -18,7 +18,8 @@ class ShopPagesController extends Controller
     public function shopPage()
     {
         $products = Product::paginate(12);
-        return view('client.shop', compact('products'));
+        $featured_products = Product::where('featured', 1)->get();
+        return view('client.shop', compact(['products', 'featured_products']));
     }
 
     public function productPage(Product $product)

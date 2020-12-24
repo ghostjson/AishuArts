@@ -3,6 +3,11 @@ let $blank = $('.blank')
 let $splash_img = $('.splash-inside img');
 $(document).ready(function (){
 
+    setTimeout(function (){
+        $splash.hide()
+        $blank.hide()
+    }, 4000)
+
     if(getStorageItem('splash') !== null){
         $splash.hide()
         $blank.hide()

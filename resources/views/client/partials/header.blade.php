@@ -33,7 +33,7 @@
                     <nav>
                         <ul>
                             <li><a href="{{ route('client.home') }}">Home</a></li>
-                            <li><a href="{{ route('client.shop') }}">Shop</a></li>
+{{--                            <li><a href="{{ route('client.shop') }}">Shop</a></li>--}}
                             <li><a href="{{ route('client.about') }}">About</a></li>
                             @guest
                                 <li><a href="{{ route('client.login') }}">Signin</a></li>

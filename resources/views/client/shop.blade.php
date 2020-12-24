@@ -19,6 +19,34 @@
             color: var(--primary) !important;
         }
     </style>
+
+    <section class="no-padding mt-4">
+        <div class="grid-articles carousel post-carousel" data-items="3" data-dots="false">
+            @foreach($featured_products as $product)
+                <article class="post-entry">
+                <a href="#" class="post-image"><img alt="" src="{{ $product->image }}"></a>
+                <div class="post-entry-overlay">
+                    <div class="post-entry-meta">
+                        <div class="product-description">
+                            <div class="product-category">{{ $product->category }}</div>
+                            <div class="product-title">
+                                <h3><a href="#">{{ $product->name }}</a></h3>
+                            </div>
+                            <div class="product-price"><ins>{{ $product->priceWithCurrency()  }}</ins>
+                            </div>
+                            @include('client.partials.product_rating')
+                            <div class="product-reviews"><a href="#">{{ $product->reviews->count() }} customer reviews</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+            @endforeach
+        </div>
+    </section>
+
+
     <section>
         <div class="container">
             <div class="row m-b-20">
@@ -112,39 +140,39 @@
     </section>
     <!-- end: Shop products -->
     <!-- DELIVERY INFO -->
-    <section class="background-grey p-t-40 p-b-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="icon-box effect small clean">
-                        <div class="icon">
-                            <a href="#"><i class="fa fa-gift"></i></a>
-                        </div>
-                        <h3>Free shipping on orders $60+</h3>
-                        <p>Order more than 60$ and you will get free shippining Worldwide. More info.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="icon-box effect small clean">
-                        <div class="icon">
-                            <a href="#"><i class="fa fa-plane"></i></a>
-                        </div>
-                        <h3>Worldwide delivery</h3>
-                        <p>We deliver to the following countries: USA, Canada, Europe, Australia</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="icon-box effect small clean">
-                        <div class="icon">
-                            <a href="#"><i class="fa fa-history"></i></a>
-                        </div>
-                        <h3>60 days money back guranty!</h3>
-                        <p>Not happy with our product, feel free to return it, we will refund 100% your money!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="background-grey p-t-40 p-b-0">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-4">--}}
+{{--                    <div class="icon-box effect small clean">--}}
+{{--                        <div class="icon">--}}
+{{--                            <a href="#"><i class="fa fa-gift"></i></a>--}}
+{{--                        </div>--}}
+{{--                        <h3>Free shipping on orders $60+</h3>--}}
+{{--                        <p>Order more than 60$ and you will get free shippining Worldwide. More info.</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-4">--}}
+{{--                    <div class="icon-box effect small clean">--}}
+{{--                        <div class="icon">--}}
+{{--                            <a href="#"><i class="fa fa-plane"></i></a>--}}
+{{--                        </div>--}}
+{{--                        <h3>Worldwide delivery</h3>--}}
+{{--                        <p>We deliver to the following countries: USA, Canada, Europe, Australia</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-4">--}}
+{{--                    <div class="icon-box effect small clean">--}}
+{{--                        <div class="icon">--}}
+{{--                            <a href="#"><i class="fa fa-history"></i></a>--}}
+{{--                        </div>--}}
+{{--                        <h3>60 days money back guranty!</h3>--}}
+{{--                        <p>Not happy with our product, feel free to return it, we will refund 100% your money!</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- end: DELIVERY INFO -->
 
 @endsection
