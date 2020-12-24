@@ -33,10 +33,10 @@
                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         <i class="fas fa-ellipsis-v"></i>
                                                     </a>
-                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                        <a class="dropdown-item" href="{{ route('admin.orders.view', $order->id) }}">View Order</a>
-                                                        <a class="dropdown-item" href="">Cancel Order</a>
-                                                    </div>
+{{--                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">--}}
+{{--                                                        <a class="dropdown-item" href="{{ route('admin.orders.view', $order->id) }}">View Order</a>--}}
+{{--                                                        <a class="dropdown-item" href="">Cancel Order</a>--}}
+{{--                                                    </div>--}}
                                                 </div>
                                             </td>
                                         </tr>

@@ -24,8 +24,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
         $schedule->command('orders:update')->everyMinute()->withoutOverlapping();
+        $schedule->command('statistics:update')->monthlyOn(1);
+        $schedule->command('shiprocket:refresh_token')->weekly();
     }
 
     /**

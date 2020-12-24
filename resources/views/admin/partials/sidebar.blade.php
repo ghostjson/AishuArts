@@ -2,7 +2,7 @@
     <div class="scrollbar-inner">
         <!-- Brand -->
         <div class="sidenav-header  align-items-center">
-            <a class="navbar-brand" href="javascript:void(0)">
+            <a class="navbar-brand" href="{{ route('client.home') }}">
                 <img src="{{ asset('images/logo.jpeg') }}" style="transform: rotate(20deg) scale(2.1); transition: 0.5s;" class="navbar-brand-img" alt="...">
             </a>
         </div>

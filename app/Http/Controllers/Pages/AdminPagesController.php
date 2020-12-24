@@ -17,7 +17,11 @@ class AdminPagesController extends Controller
 
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $orders = Order::limit(5)->get();
+        $products = Product::where('featured', 1)->get();
+
+//        dd($products);
+        return view('admin.dashboard', compact(['orders', 'products']));
     }
 
     public function productsPage()

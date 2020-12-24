@@ -86,6 +86,13 @@ class Product extends Model
         return settings('currency') . $this->price;
     }
 
+    public function getRating()
+    {
+        $rating = Review::where('product_id', $this->id)->get()
+            ->avg('rating');
+        return is_null($rating) ? 0 : $rating;
+    }
+
     public function reviews()
     {
         return $this->hasMany(Review::class);
