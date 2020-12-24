@@ -41,10 +41,10 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="tags">Tags</label>
-                                <input name="tags" type="text" class="form-control" id="tags" >
-                            </div>
+{{--                            <div class="form-group">--}}
+{{--                                <label for="tags">Tags</label>--}}
+{{--                                <input name="tags" type="text" class="form-control" id="tags" >--}}
+{{--                            </div>--}}
                             <div class="form-group">
                                 <label for="price">Product Price</label>
                                 <input name="price" type="text" class="form-control" id="price" >

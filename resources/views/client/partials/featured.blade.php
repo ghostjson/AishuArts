@@ -30,7 +30,7 @@
                 @foreach($featured as $product)
                     <div class="col-lg-3">
                         <div class="product">
-                            <div class="product-image">
+                            <div class="product-image" >
                                 <a href="#"><img alt="Shop product image!" src="{{ $product->image }}">
                                 </a>
                                 <a href="#"><img alt="Shop product image!" src="{{ $product->image }}">

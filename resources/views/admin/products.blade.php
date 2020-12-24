@@ -78,10 +78,17 @@
                                         {{ $product->price }}
                                     </td>
                                     <td>
-                                      <span class="badge badge-dot mr-4">
-                                        <i class="bg-green"></i>
-                                        <span class="status">active</span>
-                                      </span>
+                                        @if($product->is_active)
+                                            <span class="badge badge-dot mr-4">
+                                                <i class="bg-green"></i>
+                                                <span class="status">Active</span>
+                                            </span>
+                                        @else
+                                            <span class="badge badge-dot mr-4">
+                                                <i class="bg-red"></i>
+                                                <span class="status">Not Active</span>
+                                            </span>
+                                        @endif
                                     </td>
                                     <td class="text-right">
                                         <div class="dropdown">
@@ -95,11 +102,21 @@
                                                 @if($product->featured)
                                                     <a class="dropdown-item"
                                                        href="{{ route('admin.products.featured.remove', $product->id) }}"
-                                                       >Remove Featured</a>
+                                                    >Remove Featured</a>
                                                 @else
                                                     <a class="dropdown-item"
                                                        href="{{ route('admin.products.featured', $product->id) }}"
-                                                       >Make Featured</a>
+                                                    >Make Featured</a>
+                                                @endif
+
+                                                @if($product->is_active)
+                                                    <a class="dropdown-item"
+                                                       href="{{ route('admin.products.deactivate', $product->id) }}"
+                                                    >Deactivate</a>
+                                                @else
+                                                    <a class="dropdown-item"
+                                                       href="{{ route('admin.products.activate', $product->id) }}"
+                                                    >Activate</a>
                                                 @endif
 
                                                 <a class="dropdown-item" onclick="deleteProduct({{ $product->id }})"

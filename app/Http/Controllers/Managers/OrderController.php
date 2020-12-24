@@ -11,9 +11,7 @@ use App\Models\Product;
 use App\Models\Review;
 use App\Models\User;
 use App\Modules\ShiprocketAPI;
-use http\Env\Request;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\URL;
 
 class OrderController extends Controller
 {

@@ -40,10 +40,10 @@
                                     <option>Category 3</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="tags">Tags</label>
-                                <input value="{{ $product->tags }}" name="tags" type="text" class="form-control" id="tags" >
-                            </div>
+{{--                            <div class="form-group">--}}
+{{--                                <label for="tags">Tags</label>--}}
+{{--                                <input value="{{ $product->tags }}" name="tags" type="text" class="form-control" id="tags" >--}}
+{{--                            </div>--}}
                             <div class="form-group">
                                 <label for="price">Product Price</label>
                                 <input value="{{ $product->price }}" name="price" type="text" class="form-control" id="price" >

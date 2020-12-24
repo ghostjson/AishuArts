@@ -12,7 +12,9 @@ class ClientPagesController extends Controller
 {
     public function homePage()
     {
-        $featured = Product::where('featured', 1)->get();
+        $featured = Product::where('featured', 1)
+            ->where('is_active', true)
+            ->get();
         return view('client.home', compact('featured'));
     }
 

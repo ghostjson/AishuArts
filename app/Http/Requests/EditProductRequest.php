@@ -26,7 +26,7 @@ class EditProductRequest extends FormRequest
         return [
             'name' => 'required',
             'category' => 'required',
-            'tags' => 'required',
+//            'tags' => 'required',
             'price' => 'required',
             'short_description' => 'required',
             'long_description' => 'required',

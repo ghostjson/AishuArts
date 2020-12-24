@@ -17,8 +17,10 @@ class ShopPagesController extends Controller
 
     public function shopPage()
     {
-        $products = Product::paginate(12);
-        $featured_products = Product::where('featured', 1)->get();
+        $products = Product::where('is_active', true)->paginate(12);
+        $featured_products = Product::where('featured', 1)
+            ->where('is_active', true)
+            ->get();
         return view('client.shop', compact(['products', 'featured_products']));
     }
 
@@ -37,6 +39,7 @@ class ShopPagesController extends Controller
             $products = [];
         }else{
             $products = Product::find($ids);
+
         }
         return view('client.cart', compact('products'));
     }
@@ -61,7 +64,15 @@ class ShopPagesController extends Controller
             return redirect()->back();
         }else{
             $products = Product::find($ids);
+            $products = $products->reject(function ($product){
+               return !$product->is_active;
+            });
+
+            if($products->isEmpty()){
+                return redirect()->back();
+            }
         }
+
 
         return view('client.checkout', compact(['products']));
     }

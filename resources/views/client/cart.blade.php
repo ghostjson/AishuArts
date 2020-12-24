@@ -25,9 +25,13 @@
                                 </td>
                                 <td class="cart-product-thumbnail">
                                     <a href="#">
-                                        <img src="{{ $product->image }}" alt="Bolt Sweatshirt">
+                                        <img src="{{ $product->image }}" alt="{{ $product->name }}">
                                     </a>
-                                    <div class="cart-product-thumbnail-name">Bolt Sweatshirt</div>
+                                    <div class="cart-product-thumbnail-name">{{ $product->name }}
+                                        @if(!$product->is_active)
+                                            <span class="text-danger">(Currently not available)<span>
+                                        @endif
+                                    </div>
                                 </td>
 
                                 {{--                            <td class="cart-product-price">--}}

@@ -23,7 +23,8 @@ Route::middleware('admin')->group(function (){
     Route::get('/products/featured/{product}', [ProductController::class, 'featured'])->name('admin.products.featured');
     Route::get('/products/featured/remove/{product}', [ProductController::class, 'removeFeatured'])->name('admin.products.featured.remove');
 
-
+    Route::get('/products/activate/{product}', [ProductController::class, 'activateProduct'])->name('admin.products.activate');
+    Route::get('/products/deactivate/{product}', [ProductController::class, 'deactivateProduct'])->name('admin.products.deactivate');
 //category
     Route::get('/category', [AdminPagesController::class, 'categoryPage'])->name('admin.category');
     Route::post('/category', [CategoryController::class, 'create'])->name('admin.category.post');

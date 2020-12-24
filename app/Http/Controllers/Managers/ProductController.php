@@ -73,4 +73,20 @@ class ProductController extends Controller
 
         return redirect()->back();
     }
+
+    public function activateProduct(Product $product)
+    {
+        $product->is_active = true;
+        $product->save();
+
+        return redirect()->back();
+    }
+
+    public function deactivateProduct(Product $product)
+    {
+        $product->is_active = false;
+        $product->save();
+
+        return redirect()->back();
+    }
 }

@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\URL;
  * @property mixed image1
  * @property mixed image2
  * @property mixed image3
+ * @property false|mixed is_active
  */
 class Product extends Model
 {

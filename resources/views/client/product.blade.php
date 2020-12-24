@@ -16,7 +16,7 @@
                                  data-autoplay="2500" data-lightbox="gallery">
                                 @foreach($product->images as $image)
                                     <a href="{{ $image }}" data-lightbox="image" title="{{ $product->name }}"><img
-                                            alt="Shop product image!" src="{{ $image }}">
+                                            alt="{{ $product->name }}" src="{{ $image }}">
                                     </a>
                                 @endforeach
                             </div>
@@ -28,7 +28,12 @@
                         <div class="product-description">
                             <div class="product-category">{{ $product->category }}</div>
                             <div class="product-title">
-                                <h3><a href="#">{{ $product->name }}</a></h3>
+                                <h3><a href="#">{{ $product->name }}</a>
+
+                                </h3>
+                                @if(!$product->is_active)
+                                    <span class="text-danger">(Currently not available)<span>
+                                @endif
                             </div>
                             <div class="product-price">
                                 <ins>{{ $product->priceWithCurrency() }}</ins>
@@ -41,23 +46,27 @@
                             </div>
                             <div class="seperator m-b-10"></div>
                             <p>{{ $product->short_description }}</p>
-                            <div class="product-meta">
-                                <p>Tags: <a href="#" rel="tag">{{ $product->tags }}</a>
-                                </p>
-                            </div>
+                            {{--                            <div class="product-meta">--}}
+                            {{--                                <p>Tags: <a href="#" rel="tag">{{ $product->tags }}</a>--}}
+                            {{--                                </p>--}}
+                            {{--                            </div>--}}
                             <div class="seperator m-t-20 m-b-10"></div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <a class="btn" href="{{ route('client.add_to_cart', $product->id) }}"><i
-                                        class="icon-shopping-cart"></i> Add to cart</a>
-                                <a class="btn btn-dark" href="{{ route('client.product.buy', $product->id) }}"><i class="icon-shopping-bag"></i> Buy Now</a>
-                                @if($can_user_review)
-                                    <a class="btn btn-secondary" href="{{ route('client.review', $product->id) }}"><i
-                                            class="fas fa-edit"></i> Write a review</a>
-                                @endif
+                        @if($product->is_active)
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <a class="btn" href="{{ route('client.add_to_cart', $product->id) }}"><i
+                                            class="icon-shopping-cart"></i> Add to cart</a>
+                                    <a class="btn btn-dark" href="{{ route('client.product.buy', $product->id) }}"><i
+                                            class="icon-shopping-bag"></i> Buy Now</a>
+                                    @if($can_user_review)
+                                        <a class="btn btn-secondary"
+                                           href="{{ route('client.review', $product->id) }}"><i
+                                                class="fas fa-edit"></i> Write a review</a>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
 
@@ -75,7 +84,8 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact3" role="tab"
-                               aria-controls="contact" aria-selected="false"><i class="fa fa-star"></i>Reviews ({{ $product->reviews->count() }})</a></a>
+                               aria-controls="contact" aria-selected="false"><i class="fa fa-star"></i>Reviews
+                                ({{ $product->reviews->count() }})</a></a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent3">
@@ -125,7 +135,10 @@
                                     <!-- Comment -->
                                     @foreach($product->getLatestReviews() as $review)
                                         <div class="comment" id="comment-1">
-                                            <div class="image" style="height: 40px;width: 40px;"><img alt="" style="height: inherit; width: inherit" src="https://ui-avatars.com/api/?name={{ $review->user->name }}" class="avatar">
+                                            <div class="image" style="height: 40px;width: 40px;"><img alt=""
+                                                                                                      style="height: inherit; width: inherit"
+                                                                                                      src="https://ui-avatars.com/api/?name={{ $review->user->name }}"
+                                                                                                      class="avatar">
                                             </div>
                                             <div class="text">
                                                 <div class="product-rate">

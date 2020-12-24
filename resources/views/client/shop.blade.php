@@ -23,8 +23,8 @@
     <section class="no-padding mt-4">
         <div class="grid-articles carousel post-carousel" data-items="3" data-dots="false">
             @foreach($featured_products as $product)
-                <article class="post-entry">
-                <a href="#" class="post-image"><img alt="" src="{{ $product->image }}"></a>
+                <article class="post-entry" onclick="location.href = '{{ route('client.product', $product->id) }}'">
+                <a href="{{ route('client.product', $product->id) }}" class="post-image"><img alt="" src="{{ $product->image }}"></a>
                 <div class="post-entry-overlay">
                     <div class="post-entry-meta">
                         <div class="product-description">
