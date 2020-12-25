@@ -53,6 +53,7 @@ class WebsiteStatistics extends Model
     public static function getCurrentMonthSales()
     {
         return Order::whereMonth('created_at', Carbon::now()->month)
+            ->where('shiprocket_status', 'Completed')
             ->get()->count();
     }
 
@@ -67,7 +68,6 @@ class WebsiteStatistics extends Model
     public static function getCurrentMonthFeedbacks()
     {
         return Review::whereMonth('created_at', Carbon::now()->month)
-            ->where('shiprocket_status', 'Completed')
             ->get()->count();
     }
 
