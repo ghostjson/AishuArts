@@ -208,14 +208,7 @@
       <workItem from="1608791465443" duration="11024000" />
       <workItem from="1608822321467" duration="5757000" />
       <workItem from="1608880233106" duration="7141000" />
-      <workItem from="1608894344754" duration="13332000" />
-    </task>
-    <task id="LOCAL-00002" summary="create product implemented">
-      <created>1605881158099</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1605881158099</updated>
+      <workItem from="1608894344754" duration="13425000" />
     </task>
     <task id="LOCAL-00003" summary="implement product listing on admin">
       <created>1605885487956</created>
@@ -553,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608908902776</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="fix admin panel header">
+      <created>1608909138571</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1608909138571</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix admin shipping route issue" />
     <MESSAGE value="set payment gateway" />
     <MESSAGE value="integrate payment gateway" />
     <MESSAGE value="implement current order" />
@@ -586,7 +585,8 @@
     <MESSAGE value="bug fix 2" />
     <MESSAGE value="bug fix 3" />
     <MESSAGE value="order fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="order fix" />
+    <MESSAGE value="fix admin panel header" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix admin panel header" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2231" y="63" key="#Log_Highlighting_(ideolog)" timestamp="1607703069886">
@@ -611,11 +611,11 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="2264" y="59" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608802134907" />
-    <state x="2081" y="0" key="CommitChangelistDialog2" timestamp="1608908902073">
+    <state x="2081" y="0" key="CommitChangelistDialog2" timestamp="1608909137679">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1608887275804" />
-    <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608908902073" />
+    <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608909137679" />
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1608796547239" />
     <state x="1965" y="0" key="DiffContextDialog" timestamp="1605968326004">
       <screen x="1920" y="0" width="1360" height="728" />
@@ -634,10 +634,10 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="1976" y="0" key="SettingsEditor/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608198260074" />
-    <state x="2092" y="26" key="Vcs.Push.Dialog.v2" timestamp="1608908904796">
+    <state x="2092" y="26" key="Vcs.Push.Dialog.v2" timestamp="1608909140235">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
-    <state x="2092" y="26" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608908904796" />
+    <state x="2092" y="26" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608909140235" />
     <state x="2388" y="66" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1608735920815">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>

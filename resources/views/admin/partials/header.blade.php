@@ -17,7 +17,7 @@
 {{--                </button>--}}
 {{--            </form>--}}
             <!-- Navbar links -->
-{{--            <ul class="navbar-nav align-items-center  ml-md-auto ">--}}
+            <ul class="navbar-nav align-items-center  ml-md-auto ">
 {{--                <li class="nav-item d-xl-none">--}}
 {{--                    <!-- Sidenav toggler -->--}}
 {{--                    <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">--}}
@@ -113,7 +113,7 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 {{--                </li>--}}
-{{--            </ul>--}}
+            </ul>
             <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
                 <li class="nav-item dropdown">
                     <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
