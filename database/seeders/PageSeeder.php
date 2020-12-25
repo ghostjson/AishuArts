@@ -36,7 +36,8 @@ class PageSeeder extends Seeder
            'name' => 'contact_page',
            'content' => json_encode([
                'description' => 'The most happiest time of the day!. Suspendisse condimentum porttitor cursus. Duis nec nulla turpis. Nulla lacinia laoreet odio, non lacinia nisl malesuada vel. Aenean malesuada fermentum bibendum.',
-               'instagram' => '#'
+               'instagram' => '#',
+               'contact_email' => 'example@example.com'
            ])
         ]);
     }

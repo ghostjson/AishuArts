@@ -14,7 +14,8 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <form class="widget-contact-form" action="{{ route('client.contact.post') }}" role="form" method="post">
+                    <form action="{{ route('client.contact.post') }}" method="post">
+                        @csrf
                         @include('partials.error')
                         <div class="row">
                             <div class="form-group col-md-6">

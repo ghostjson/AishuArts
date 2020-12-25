@@ -27,7 +27,7 @@ class ContactSendRequest extends FormRequest
             'name' => 'required',
             'email' => 'required',
             'subject' => 'required',
-            'content' => 'content'
+            'content' => 'required'
         ];
     }
 }

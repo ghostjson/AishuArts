@@ -71,7 +71,7 @@
     <div class="copyright-content">
         <div class="container">
             <div class="copyright-text text-center">&copy; 2020 AishuArts - All
-                Rights Reserved.</div>
+                Rights Reserved. | <span style="font-weight: 600"><a href="{{ route('client.contact') }}">Contact</a></span> </div>
         </div>
     </div>
 </footer>
