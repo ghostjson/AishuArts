@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
 use App\Models\CanReviews;
+use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -15,13 +16,22 @@ class ShopPagesController extends Controller
         $this->middleware('auth')->only(['checkoutPage']);
     }
 
-    public function shopPage()
+    public function shopPage(Request $request)
     {
-        $products = Product::where('is_active', true)->paginate(12);
-        $featured_products = Product::where('featured', 1)
-            ->where('is_active', true)
-            ->get();
-        return view('client.shop', compact(['products', 'featured_products']));
+        $category = $request->query('category');
+
+        if(is_null($category)){
+            $products = Product::where('is_active', true)->paginate(12);
+        }else{
+            $products = Product::where('is_active', true)
+                ->where('category', $category)
+                ->paginate(12);
+        }
+
+
+        $featured_products = $this->getFeatured();
+        $categories = $this->getCategories();
+        return view('client.shop', compact(['products', 'featured_products', 'categories']));
     }
 
     public function productPage(Product $product)
@@ -82,6 +92,76 @@ class ShopPagesController extends Controller
         return view('client.checkout_completed', compact('order'));
     }
 
+    public function filterLowToHigh(Request $request)
+    {
+        $category = $request->query('category');
+
+        if(is_null($category)){
+            $products = Product::where('is_active', true)->paginate(12);
+        }else {
+            $products = Product::where('is_active', true)
+                ->where('category', $category)
+                ->orderBy('price', 'asc')
+                ->paginate(12);
+        }
+        $featured_products = $this->getFeatured();
+        $categories = $this->getCategories();
+        return view('client.shop', compact(['products', 'featured_products', 'categories']));
+    }
+
+    public function filterHighToLow(Request $request)
+    {
+        $category = $request->query('category');
+
+        if(is_null($category)){
+            $products = Product::where('is_active', true)->paginate(12);
+        }else {
+            $products = Product::where('is_active', true)
+                ->where('category', $category)
+                ->orderBy('price', 'desc')
+                ->paginate(12);
+        }
+
+        $featured_products = $this->getFeatured();
+        $categories = $this->getCategories();
+        return view('client.shop', compact(['products', 'featured_products', 'categories']));
+    }
+
+    public function filterRecent(Request $request)
+    {
+        $category = $request->query('category');
+
+        if(is_null($category)){
+            $products = Product::where('is_active', true)->paginate(12);
+        }else {
+            $products = Product::where('is_active', true)
+                ->where('category', $category)
+                ->orderBy('created_at', 'desc')
+                ->paginate(12);
+        }
+        $featured_products = $this->getFeatured();
+        $categories = $this->getCategories();
+        return view('client.shop', compact(['products', 'featured_products', 'categories']));
+    }
+
+    public function filterRating(Request $request)
+    {
+        $category = $request->query('category');
+
+        if(is_null($category)){
+            $products = Product::where('is_active', true)->paginate(12);
+        }else{
+            $products = Product::where('is_active', true)
+                ->where('category', $category)
+                ->orderBy('avg_rating', 'desc')
+                ->paginate(12);
+        }
+        $featured_products = $this->getFeatured();
+        $categories = $this->getCategories();
+        return view('client.shop', compact(['products', 'featured_products', 'categories']));
+    }
+
+
     private function canReview(int $product_id){
         if(CanReviews::where('product_id', $product_id)
             ->where('user_id', auth()->id())->exists()){
@@ -91,4 +171,14 @@ class ShopPagesController extends Controller
         }
     }
 
+    private function getFeatured(){
+        return Product::where('featured', 1)
+            ->where('is_active', true)
+            ->get();
+    }
+
+    public function getCategories()
+    {
+        return Category::all();
+    }
 }

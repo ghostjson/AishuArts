@@ -55,14 +55,13 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, sit, exercitationem,
                         consequuntur, assumenda iusto eos commodi alias.</p>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 mt-3">
                     <div class="order-select">
                         <h6>Sort by</h6>
-                        <p>Showing 1&ndash;12 of 25 results</p>
+{{--                        <p>Showing 1&ndash;12 of 25 results</p>--}}
                         <form method="get">
-                            <select class="form-control">
+                            <select class="form-control" id="filter" onchange="changeFilter()">
                                 <option value="order" selected="selected">Default sorting</option>
-                                <option value="popularity">Sort by popularity</option>
                                 <option value="rating">Sort by average rating</option>
                                 <option value="date">Sort by newness</option>
                                 <option value="price">Sort by price: low to high</option>
@@ -71,16 +70,16 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 mt-3">
                     <div class="order-select">
-                        <h6>Sort by Price</h6>
-                        <p>From 0 - 190$</p>
+                        <h6>Category</h6>
+{{--                        <p>From 0 - 190$</p>--}}
                         <form method="get">
-                            <select class="form-control">
-                                <option value="" selected="selected">0$ - 50$</option>
-                                <option value="">51$ - 90$</option>
-                                <option value="">91$ - 120$</option>
-                                <option value="">121$ - 200$</option>
+                            <select class="form-control" id="category" onchange="changeCategory()">
+                                    <option value="default">All</option>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
                             </select>
                         </form>
                     </div>
@@ -93,9 +92,9 @@
                         <div class="grid-item">
                             <div class="product" onclick="productPage({{$product->id}})">
                                 <div class="product-image">
-                                    <a><img alt="Shop product image!" src="{{ $product->image }}">
+                                    <a><img alt="{{ $product->name }}" src="{{ $product->image }}">
                                     </a>
-                                    <a><img alt="Shop product image!" src="{{ $product->image }}">
+                                    <a><img alt="{{ $product->name }}" src="{{ $product->image }}">
                                     </a>
                                     <span class="product-cart">
                                         <a href="{{ route('client.add_to_cart', $product->id) }}"><i class="fas fa-shopping-cart"></i></a>
@@ -179,9 +178,68 @@
 
 @section('scripts')
     <script>
+
+        let $filter = $('#filter')
+
+        $(document).ready(function (){
+            let url = location.href.split('?')[0]
+            switch (url){
+                case '{{ route('client.shop.low_to_high') }}':
+                    $filter.val('price')
+                    break;
+                case '{{ route('client.shop.high_to_low') }}':
+                    $filter.val('price-desc')
+                    break;
+                case '{{ route('client.shop.recent') }}':
+                    $filter.val('date')
+                    break;
+                case '{{ route('client.shop.rating') }}':
+                    $filter.val('rating')
+                    break;
+                default:
+                    $filter.val('order')
+                    break;
+            }
+
+        })
+
         function productPage(id){
             location.replace(
                 '{{ \Illuminate\Support\Facades\URL::to('/product') }}/' + id)
+        }
+
+        function changeFilter(){
+            let filter = $filter.val();
+
+            console.log(filter)
+
+            switch (filter){
+                case 'price':
+                    location.href = '{{ route('client.shop.low_to_high') }}'
+                    break;
+                case 'price-desc':
+                    location.href = '{{ route('client.shop.high_to_low') }}'
+                    break;
+                case 'date':
+                    location.href = '{{ route('client.shop.recent') }}'
+                    break;
+                case 'rating':
+                    location.href = '{{ route('client.shop.rating') }}'
+                    break;
+                default:
+                    location.href = '{{ route('client.shop') }}'
+                    break;
+            }
+        }
+
+        function changeCategory(){
+            let category = $('#category').val()
+
+            if(category === 'default'){
+                location.href = '{{ \Illuminate\Support\Facades\Request::url() }}'
+            }else{
+                location.href = '{{ \Illuminate\Support\Facades\Request::url() }}?category='+ category;
+            }
         }
     </script>
 @endsection

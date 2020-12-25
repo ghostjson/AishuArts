@@ -20,6 +20,13 @@ Route::post('/profile', [AuthController::class, 'profileUpdate'])->name('client.
 
 //shop
 Route::get('/shop', [ShopPagesController::class, 'shopPage'])->name('client.shop');
+
+//filters
+Route::get('/shop/filter/low-to-high', [ShopPagesController::class, 'filterLowToHigh'])->name('client.shop.low_to_high');
+Route::get('/shop/filter/high-to-low', [ShopPagesController::class, 'filterHighToLow'])->name('client.shop.high_to_low');
+Route::get('/shop/filter/recent', [ShopPagesController::class, 'filterRecent'])->name('client.shop.recent');
+Route::get('/shop/filter/rating', [ShopPagesController::class, 'filterRating'])->name('client.shop.rating');
+
 Route::get('/product/{product}', [ShopPagesController::class, 'productPage'])->name('client.product');
 Route::get('/cart', [ShopPagesController::class, 'cartPage'])->name('client.cart');
 Route::get('/checkout', [ShopPagesController::class, 'checkoutPage'])->name('client.checkout');

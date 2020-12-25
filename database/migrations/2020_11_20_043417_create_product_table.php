@@ -18,7 +18,7 @@ class CreateProductTable extends Migration
             $table->string('name');
             $table->bigInteger('category')->unsigned();
 //            $table->string('tags');
-            $table->string('price');
+            $table->bigInteger('price');
             $table->text('short_description');
             $table->longText('long_description');
             $table->string('image1');
@@ -26,6 +26,9 @@ class CreateProductTable extends Migration
             $table->string('image3')->nullable();
             $table->boolean('featured')->default(false);
             $table->boolean('is_active')->default(true);
+
+            $table->integer('avg_rating')->default(0);
+
             $table->timestamps();
         });
     }

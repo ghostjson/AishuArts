@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5e636e9-6397-4518-a977-1eb06b748f55" name="Default Changelist" comment="fix featured product link">
+    <list default="true" id="a5e636e9-6397-4518-a977-1eb06b748f55" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Models/AvgRating.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_25_073519_create_avg_rating_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Managers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Managers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Managers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Managers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Pages/ClientPagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Pages/ClientPagesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Pages/ShopPagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Pages/ShopPagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateProductRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/EditProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/EditProductRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Review.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Review.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_20_043417_create_product_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_20_043417_create_product_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/new.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/partials/featured.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/partials/featured.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/partials/product_rating.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/partials/product_rating.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/client/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/shop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/client.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/client.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +210,8 @@
       <workItem from="1608369245017" duration="4736000" />
       <workItem from="1608733139396" duration="7270000" />
       <workItem from="1608791465443" duration="11024000" />
-      <workItem from="1608822321467" duration="3628000" />
+      <workItem from="1608822321467" duration="5757000" />
+      <workItem from="1608880233106" duration="6987000" />
     </task>
     <task id="LOCAL-00001" summary="add admin panel&#10;add product section &#10;add product new page">
       <created>1605854879574</created>
@@ -492,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608802564044</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="fix featured product link&#10;product active implemented">
+      <created>1608825992424</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1608825992424</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +501,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="order management implemented" />
     <MESSAGE value="change color theme of admin panel&#10;add logo&#10;orders view implemented" />
     <MESSAGE value="add featured products" />
     <MESSAGE value="category crud implemented" />
@@ -525,7 +525,8 @@
     <MESSAGE value="add to cart on the card itself added" />
     <MESSAGE value="several UI fixes&#10;remove home page&#10;set shop and home as one&#10;add featured products slide show in the home page" />
     <MESSAGE value="several UI fixes&#10;dashboard statistics implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="several UI fixes&#10;dashboard statistics implemented" />
+    <MESSAGE value="fix featured product link&#10;product active implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix featured product link&#10;product active implemented" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2231" y="63" key="#Log_Highlighting_(ideolog)" timestamp="1607703069886">
@@ -550,11 +551,11 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="2264" y="59" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608802134907" />
-    <state x="2081" y="0" key="CommitChangelistDialog2" timestamp="1608822724204">
+    <state x="2081" y="0" key="CommitChangelistDialog2" timestamp="1608825990545">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1605887931334" />
-    <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608822724204" />
+    <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608825990545" />
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1608796547239" />
     <state x="1965" y="0" key="DiffContextDialog" timestamp="1605968326004">
       <screen x="1920" y="0" width="1360" height="728" />
@@ -573,10 +574,10 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="1976" y="0" key="SettingsEditor/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608198260074" />
-    <state x="2092" y="26" key="Vcs.Push.Dialog.v2" timestamp="1608199729895">
+    <state x="2092" y="26" key="Vcs.Push.Dialog.v2" timestamp="1608825993133">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
-    <state x="2092" y="26" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608199729895" />
+    <state x="2092" y="26" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608825993133" />
     <state x="2388" y="66" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1608735920815">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
@@ -585,21 +586,21 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="2246" y="204" width="925" height="692" key="dock-window-1/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1606142234706" />
-    <state x="2238" y="0" width="694" height="728" key="find.popup" timestamp="1608822414756">
-      <screen x="1920" y="0" width="1360" height="728" />
+    <state x="409" y="22" width="718" height="780" key="find.popup" timestamp="1608885929109">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="409" y="22" width="718" height="780" key="find.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1605847675847" />
+    <state x="409" y="22" width="718" height="780" key="find.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1608885929109" />
     <state x="2238" y="0" width="694" height="728" key="find.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608822414756" />
     <state x="2222" y="162" width="744" height="914" key="run.anything.popup" timestamp="1607785967318">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="2222" y="162" width="744" height="914" key="run.anything.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1607785967318" />
     <state x="341" y="183" width="840" height="1034" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606228616826" />
-    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup" timestamp="1608825556146">
-      <screen x="1920" y="0" width="1360" height="728" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1608885942112">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1606317012102" />
-    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608825556146" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1608885942112" />
+    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608827021141" />
     <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608796394425" />
   </component>
 </project>

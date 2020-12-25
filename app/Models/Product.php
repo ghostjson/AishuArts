@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\URL;
  * @method static create(array $validated)
  * @method static find($id)
  * @method static paginate(int $int)
+ * @method static where(string $string, int $int)
  * @property mixed price
  * @property mixed id
  * @property mixed image1
@@ -24,6 +25,16 @@ class Product extends Model
 
     public $guarded = [];
 
+    public function save(array $options = [])
+    {
+        $product = parent::save($options);
+        AvgRating::updateOrCreate(
+            ['product_id' => $this->id],
+            ['product_id' => $this->id]
+        );
+
+        return $product;
+    }
 
     public function setImage1Attribute(UploadedFile $file)
     {
@@ -93,6 +104,7 @@ class Product extends Model
             ->avg('rating');
         return is_null($rating) ? 0 : $rating;
     }
+
 
     public function reviews()
     {
