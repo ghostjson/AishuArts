@@ -15,7 +15,7 @@ class CreateAvgRatingTable extends Migration
     {
         Schema::create('avg_rating', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('product_id');
+            $table->bigInteger('product_id')->unsigned();
             $table->integer('sum_rating')->default(0);
             $table->integer('avg_rating')->default(0);
 
