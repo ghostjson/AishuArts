@@ -96,9 +96,9 @@ class ShiprocketAPI
                     'order_items' => $order_items,
                     'payment_method' => $order->payment_method,
                     'sub_total' => $total_price,
-                    'length' => 10,
-                    'height' => 10,
-                    'breadth' => 10,
+                    'length' => 160,
+                    'height' => 100,
+                    'breadth' => 60,
                     'weight' => 0.5
                 ]
             ]);
