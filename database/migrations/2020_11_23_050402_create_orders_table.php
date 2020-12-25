@@ -28,7 +28,7 @@ class CreateOrdersTable extends Migration
             $table->string('payment_method');
             $table->json('products');
 
-            $table->bigInteger('user_id');
+            $table->bigInteger('user_id')->unsigned();
 
 
 

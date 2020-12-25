@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5e636e9-6397-4518-a977-1eb06b748f55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Mail/SendContactMail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/mail/contact.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Pages/ClientPagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Pages/ClientPagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ContactSendRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ContactSendRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PageSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PageSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_23_050402_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_23_050402_create_orders_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +208,7 @@
       <workItem from="1608791465443" duration="11024000" />
       <workItem from="1608822321467" duration="5757000" />
       <workItem from="1608880233106" duration="7141000" />
-      <workItem from="1608894344754" duration="10491000" />
+      <workItem from="1608894344754" duration="11678000" />
     </task>
     <task id="LOCAL-00001" summary="add admin panel&#10;add product section &#10;add product new page">
       <created>1605854879574</created>
@@ -517,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608904773895</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="contact mail implemented">
+      <created>1608905912937</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1608905912937</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +526,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix login page" />
     <MESSAGE value="add rating UI&#10;fix logo" />
     <MESSAGE value="simple auth added,&#10;checkout user implemeted" />
     <MESSAGE value="add profile page" />
@@ -550,7 +550,8 @@
     <MESSAGE value="shop page filters implemented" />
     <MESSAGE value="pages dynamic content implemented" />
     <MESSAGE value="ship mail implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="ship mail implemented" />
+    <MESSAGE value="contact mail implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="contact mail implemented" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2231" y="63" key="#Log_Highlighting_(ideolog)" timestamp="1607703069886">
@@ -575,11 +576,11 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="2264" y="59" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608802134907" />
-    <state x="2081" y="0" key="CommitChangelistDialog2" timestamp="1608904772975">
+    <state x="2081" y="0" key="CommitChangelistDialog2" timestamp="1608905911942">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1608887275804" />
-    <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608904772975" />
+    <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608905911942" />
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1608796547239" />
     <state x="1965" y="0" key="DiffContextDialog" timestamp="1605968326004">
       <screen x="1920" y="0" width="1360" height="728" />
@@ -598,10 +599,10 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="1976" y="0" key="SettingsEditor/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608198260074" />
-    <state x="2092" y="26" key="Vcs.Push.Dialog.v2" timestamp="1608825993133">
+    <state x="2092" y="26" key="Vcs.Push.Dialog.v2" timestamp="1608906100641">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
-    <state x="2092" y="26" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608825993133" />
+    <state x="2092" y="26" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608906100641" />
     <state x="2388" y="66" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1608735920815">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
@@ -620,11 +621,11 @@
     </state>
     <state x="2222" y="162" width="744" height="914" key="run.anything.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1607785967318" />
     <state x="341" y="183" width="840" height="1034" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606228616826" />
-    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup" timestamp="1608905280982">
+    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup" timestamp="1608906672915">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1608885942112" />
-    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608905280982" />
+    <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608906672915" />
     <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608796394425" />
   </component>
 </project>
