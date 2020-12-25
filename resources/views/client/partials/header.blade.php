@@ -1,5 +1,5 @@
 <!-- Header -->
-<header id="header" data-transparent="true">
+<header id="header">
     <div class="header-inner">
         <div class="container">
             <!--Logo-->

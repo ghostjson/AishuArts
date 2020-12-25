@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ContactSendRequest;
 use App\Models\Order;
+use App\Models\Page;
 use App\Models\Product;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -20,7 +22,8 @@ class ClientPagesController extends Controller
 
     public function aboutPage()
     {
-        return view('client.about');
+        $page = Page::getPage('about_page');
+        return view('client.about', compact('page'));
     }
 
     public function profilePage()
@@ -60,5 +63,16 @@ class ClientPagesController extends Controller
         }else{
             return redirect()->route('client.product', $product->id);
         }
+    }
+
+    public function contactPage()
+    {
+        $page = Page::getPage('contact_page');
+        return view('client.contact', compact('page'));
+    }
+
+    public function contactSend(ContactSendRequest $request)
+    {
+        //TODO
     }
 }

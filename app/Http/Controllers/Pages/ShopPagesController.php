@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\CanReviews;
 use App\Models\Category;
 use App\Models\Order;
+use App\Models\Page;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,7 @@ class ShopPagesController extends Controller
     public function shopPage(Request $request)
     {
         $category = $request->query('category');
+        $page = Page::getPage('home_page');
 
         if(is_null($category)){
             $products = Product::where('is_active', true)->paginate(12);
@@ -31,7 +33,7 @@ class ShopPagesController extends Controller
 
         $featured_products = $this->getFeatured();
         $categories = $this->getCategories();
-        return view('client.shop', compact(['products', 'featured_products', 'categories']));
+        return view('client.shop', compact(['products', 'featured_products', 'categories', 'page']));
     }
 
     public function productPage(Product $product)
@@ -95,6 +97,7 @@ class ShopPagesController extends Controller
     public function filterLowToHigh(Request $request)
     {
         $category = $request->query('category');
+        $page = Page::getPage('home_page');
 
         if(is_null($category)){
             $products = Product::where('is_active', true)->paginate(12);
@@ -106,12 +109,13 @@ class ShopPagesController extends Controller
         }
         $featured_products = $this->getFeatured();
         $categories = $this->getCategories();
-        return view('client.shop', compact(['products', 'featured_products', 'categories']));
+        return view('client.shop', compact(['products', 'featured_products', 'categories', 'page']));
     }
 
     public function filterHighToLow(Request $request)
     {
         $category = $request->query('category');
+        $page = Page::getPage('home_page');
 
         if(is_null($category)){
             $products = Product::where('is_active', true)->paginate(12);
@@ -124,12 +128,13 @@ class ShopPagesController extends Controller
 
         $featured_products = $this->getFeatured();
         $categories = $this->getCategories();
-        return view('client.shop', compact(['products', 'featured_products', 'categories']));
+        return view('client.shop', compact(['products', 'featured_products', 'categories', 'page']));
     }
 
     public function filterRecent(Request $request)
     {
         $category = $request->query('category');
+        $page = Page::getPage('home_page');
 
         if(is_null($category)){
             $products = Product::where('is_active', true)->paginate(12);
@@ -141,12 +146,13 @@ class ShopPagesController extends Controller
         }
         $featured_products = $this->getFeatured();
         $categories = $this->getCategories();
-        return view('client.shop', compact(['products', 'featured_products', 'categories']));
+        return view('client.shop', compact(['products', 'featured_products', 'categories', 'page']));
     }
 
     public function filterRating(Request $request)
     {
         $category = $request->query('category');
+        $page = Page::getPage('home_page');
 
         if(is_null($category)){
             $products = Product::where('is_active', true)->paginate(12);
@@ -158,7 +164,7 @@ class ShopPagesController extends Controller
         }
         $featured_products = $this->getFeatured();
         $categories = $this->getCategories();
-        return view('client.shop', compact(['products', 'featured_products', 'categories']));
+        return view('client.shop', compact(['products', 'featured_products', 'categories', 'page']));
     }
 
 

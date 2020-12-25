@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pages;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Order;
+use App\Models\Page;
 use App\Models\Product;
 
 class AdminPagesController extends Controller
@@ -73,5 +74,28 @@ class AdminPagesController extends Controller
     public function paymentPage()
     {
         return view('admin.payment');
+    }
+
+    public function pagesPage()
+    {
+        return view('admin.pages');
+    }
+
+    public function homePage()
+    {
+        $page = Page::getPage('home_page');
+        return view('admin.pages.home', compact(['page']));
+    }
+
+    public function aboutPage()
+    {
+        $page = Page::getPage('about_page');
+        return view('admin.pages.about', compact(['page']));
+    }
+
+    public function contactPage()
+    {
+        $page = Page::getPage('contact_page');
+        return view('admin.pages.contact', compact(['page']));
     }
 }

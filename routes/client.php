@@ -14,8 +14,10 @@ Route::get('/', [ShopPagesController::class, 'shopPage'])->name('client.home');
 
 Route::get('/about', [ClientPagesController::class, 'aboutPage'])->name('client.about');
 Route::get('/profile', [ClientPagesController::class, 'profilePage'])->name('client.profile');
+Route::get('/contact', [ClientPagesController::class, 'contactPage'])->name('client.contact');
 
 Route::post('/profile', [AuthController::class, 'profileUpdate'])->name('client.profile.update');
+Route::post('/contact', [ClientPagesController::class, 'contactSend'])->name('client.contact.post');
 
 
 //shop

@@ -51,9 +51,8 @@
         <div class="container">
             <div class="row m-b-20">
                 <div class="col-lg-6 p-t-10 m-b-20">
-                    <h3 class="m-b-20">A Monochromatic Spring ’15</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, sit, exercitationem,
-                        consequuntur, assumenda iusto eos commodi alias.</p>
+                    <h3 class="m-b-20">{{ $page->content->title }}</h3>
+                    <p>{{ $page->content->subtitle }}</p>
                 </div>
                 <div class="col-lg-3 mt-3">
                     <div class="order-select">
