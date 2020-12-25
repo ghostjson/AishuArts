@@ -4,12 +4,17 @@ namespace App\Modules;
 
 
 use App\Events\OrderDelivered;
+use App\Mail\OrderCancelledMail;
+use App\Mail\OrderConfirmMail;
+use App\Mail\OrderDeliveredMail;
+use App\Mail\OrderShippedMail;
 use App\Models\Order;
 use App\Models\Product;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class ShiprocketAPI
 {
@@ -125,7 +130,6 @@ class ShiprocketAPI
                     $data2 = (json_decode($request2->getBody()->getContents(), true));
 
                     $track = $data2['tracking_data']['track_status'];
-                    $track = 7;
                     switch ($track) {
                         case 0:
                             $order->tracking = 'Pending';
@@ -135,18 +139,30 @@ class ShiprocketAPI
                         case 3:
                         case 4:
                         case 5:
-                            $order->tracking = 'Confirmed';
+                            if($order->tracking !='Confirmed'){
+                                $order->tracking = 'Confirmed';
+                                Mail::to($order->user)->send(new OrderConfirmMail($order));
+                            }
                             break;
                         case 6:
                         case 17:
-                            $order->tracking = 'Shipped';
-                            break;
+                            if($order->tracking != 'Shipped'){
+                                $order->tracking = 'Shipped';
+                                Mail::to($order->user)->send(new OrderShippedMail($order));
+                            }
+                        break;
                         case 7:
-                            $order->tracking = 'Delivered';
-                            OrderDelivered::dispatch($order);
+                            if($order->tracking != 'Delivered'){
+                                $order->tracking = 'Delivered';
+                                Mail::to($order->user)->send(new OrderDeliveredMail($order));
+                                OrderDelivered::dispatch($order);
+                            }
                             break;
                         case 8:
-                            $order->tracking = 'Canceled';
+                            if($order->tracking != 'Canceled'){
+                                $order->tracking = 'Canceled';
+                                Mail::to($order->user)->send(new OrderCancelledMail($order));
+                            }
                             break;
 
                     }

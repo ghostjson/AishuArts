@@ -64,3 +64,5 @@ Route::post('/payment-redirect', [PaymentController::class, 'paymentSuccess'])->
 
 //depreciated
 Route::get('/orders', [ClientPagesController::class, 'ordersPage'])->name('client.orders');
+
+
