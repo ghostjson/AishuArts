@@ -4,7 +4,7 @@
         <div class="container">
             <!--Logo-->
             <div id="logo" style="width: 100px">
-                <img width="100px" style="transform: rotate(20deg) scale(1.2); margin-left: 30px !important;"
+                <img id="logo-image" width="100px" style="transform: scale(1.3); margin-left: 30px !important;"
                      src="{{ asset('images/logo.jpeg') }}" alt="">
             </div>
             <!--End: Logo-->
@@ -67,3 +67,20 @@
     </div>
 </header>
 <!-- end: Header -->
+
+<style>
+    @media only screen and (max-width: 500px) {
+
+        #header #logo{
+            left: 27% !important;
+        }
+    }
+
+    @media only screen and (max-width: 1000px) {
+
+        #header #logo{
+            left: 40% !important;
+        }
+    }
+
+</style>
