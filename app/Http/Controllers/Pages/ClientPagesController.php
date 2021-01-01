@@ -82,5 +82,9 @@ class ClientPagesController extends Controller
     public function searchPage(Request $request)
     {
         $query = $request->get('query');
+
+        $products = Product::where('name', 'LIKE','%' . $query . '%')->get();
+
+        return view('client.search_results', compact('products'));
     }
 }
