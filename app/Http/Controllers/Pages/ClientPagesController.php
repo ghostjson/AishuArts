@@ -9,6 +9,7 @@ use App\Models\Order;
 use App\Models\Page;
 use App\Models\Product;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class ClientPagesController extends Controller
@@ -76,5 +77,10 @@ class ClientPagesController extends Controller
         $page = Page::getPage('contact_page');
         Mail::to($page->content->contact_email)->queue(new SendContactMail($request->validated()));
         return redirect()->back()->with(['successfully send message']);
+    }
+
+    public function searchPage(Request $request)
+    {
+        $query = $request->get('query');
     }
 }

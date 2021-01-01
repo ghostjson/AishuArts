@@ -16,6 +16,7 @@ Route::get('/about', [ClientPagesController::class, 'aboutPage'])->name('client.
 Route::get('/profile', [ClientPagesController::class, 'profilePage'])->name('client.profile');
 Route::get('/contact', [ClientPagesController::class, 'contactPage'])->name('client.contact');
 Route::get('/terms-and-conditions', [ClientPagesController::class, 'termsPage'])->name('client.terms');
+Route::get('/search', [ClientPagesController::class, 'searchPage'])->name('client.search');
 
 
 Route::post('/profile', [AuthController::class, 'profileUpdate'])->name('client.profile.update');
