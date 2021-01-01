@@ -9,7 +9,6 @@ use App\Models\Order;
 use App\Models\Page;
 use App\Models\Product;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class ClientPagesController extends Controller
@@ -32,14 +31,6 @@ class ClientPagesController extends Controller
     {
         return view('client.profile');
     }
-
-    public function ordersPage()
-    {
-        $orders = Order::where('user_id', auth()->id())->orderBy('created_at', 'desc')
-            ->latest()->limit(20)->get();
-        return view('client.orders', compact('orders'));
-    }
-
     public function OrdersCurrentPage()
     {
         $orders = Order::where('tracking', '!=' ,'Delivered')
@@ -65,6 +56,13 @@ class ClientPagesController extends Controller
         }else{
             return redirect()->route('client.product', $product->id);
         }
+    }
+
+
+
+    public function termsPage()
+    {
+        return view('client.terms');
     }
 
     public function contactPage()

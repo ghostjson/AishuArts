@@ -9,8 +9,7 @@
             </div>
             <!--End: Logo-->
             <!-- Search -->
-            <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><<i>
-                        class="icon-x"></i></a>
+            <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i class="icon-x"></i></a>
                 <form class="search-form" action="search-results-page.html" method="get">
                     <input class="form-control" name="q" type="text" placeholder="Type & Search..."/>
                     <span class="text-muted">Start typing & press "Enter" or "ESC" to close</span>
@@ -69,6 +68,11 @@
 <!-- end: Header -->
 
 <style>
+
+    #logo{
+        cursor: pointer;
+    }
+
     @media only screen and (max-width: 500px) {
 
         #header #logo{
@@ -79,8 +83,9 @@
     @media only screen and (max-width: 1000px) {
 
         #header #logo{
-            left: 40% !important;
+            left: 35%;
         }
     }
 
 </style>
+

@@ -15,9 +15,12 @@ Route::get('/', [ShopPagesController::class, 'shopPage'])->name('client.home');
 Route::get('/about', [ClientPagesController::class, 'aboutPage'])->name('client.about');
 Route::get('/profile', [ClientPagesController::class, 'profilePage'])->name('client.profile');
 Route::get('/contact', [ClientPagesController::class, 'contactPage'])->name('client.contact');
+Route::get('/terms-and-conditions', [ClientPagesController::class, 'termsPage'])->name('client.terms');
+
 
 Route::post('/profile', [AuthController::class, 'profileUpdate'])->name('client.profile.update');
 Route::post('/contact', [ClientPagesController::class, 'contactSend'])->name('client.contact.post');
+
 
 
 //shop
@@ -50,19 +53,13 @@ Route::post('/review/{product}', [OrderController::class, 'addReview'])->name('c
 
 // Authentication
 Route::get('/login', [AuthPagesController::class, 'loginPage'])->name('client.login');
-Route::get('/register', function () {
-    return view('client.home');
-})->name('client.register');
+Route::get('/register', [AuthPagesController::class, 'registerPage'])->name('client.register');
 
 
 Route::post('/login', [AuthController::class, 'login'])->name('client.login.post');
+Route::post('/register', [AuthController::class, 'register'])->name('client.register.post');
 Route::get('/logout', [AuthController::class, 'logout'])->name('client.logout');
 
 //cashfree
 Route::post('/payment-redirect', [PaymentController::class, 'paymentSuccess'])->name('client.payment_redirect');
-
-
-//depreciated
-Route::get('/orders', [ClientPagesController::class, 'ordersPage'])->name('client.orders');
-
 

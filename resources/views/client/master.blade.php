@@ -91,6 +91,12 @@
 
 <script src="{{ asset('js/splash.js') }}"></script>
 
+<script>
+    $('#logo').click(() => {
+        location.href = '{{ route('client.home') }}'
+    })
+</script>
+
 @yield('scripts')
 
 </body>

@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Managers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Http\Requests\RegisterUserRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
@@ -21,6 +23,26 @@ class AuthController extends Controller
                 ;
         }else{
             return redirect()->back()->withErrors(['Email or password is incorrect']);
+        }
+    }
+
+    public function register(RegisterUserRequest $request)
+    {
+        $user = new User;
+        $user->name = $request->input('name');
+        $user->role = 'user';
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('password'));
+
+        try {
+            $user->save();
+
+            Auth::login($user);
+
+            return redirect()->route('client.home');
+        }catch (\Exception $exception){
+            Log::error($exception);
+            return redirect()->back()->withErrors(['Registration failed, please contact us']);
         }
     }
 

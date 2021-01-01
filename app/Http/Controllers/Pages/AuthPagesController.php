@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
-use App\Http\Middleware\Authenticate;
-use Illuminate\Http\Request;
 
 class AuthPagesController extends Controller
 {
@@ -13,6 +11,15 @@ class AuthPagesController extends Controller
     {
         if(is_null(auth()->user())){
             return view('client.login');
+        }else{
+            return redirect()->route('client.home');
+        }
+    }
+
+    public function registerPage()
+    {
+        if(is_null(auth()->user())){
+            return view('client.register');
         }else{
             return redirect()->route('client.home');
         }
