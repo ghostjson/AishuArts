@@ -14,7 +14,7 @@ class ShopPagesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->only(['checkoutPage']);
+        $this->middleware('auth')->only(['checkoutPage', 'buyNow']);
     }
 
     public function shopPage(Request $request)

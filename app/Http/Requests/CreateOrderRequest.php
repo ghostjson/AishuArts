@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\PhoneRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateOrderRequest extends FormRequest
@@ -31,7 +32,7 @@ class CreateOrderRequest extends FormRequest
             'billing_city' => 'required',
             'billing_pincode' => 'required',
             'billing_email' => 'required',
-            'billing_phone'  => 'required',
+            'billing_phone'  => ['required', new PhoneRule()],
             'payment_method' => 'required'
         ];
     }
