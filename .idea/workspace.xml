@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5e636e9-6397-4518-a977-1eb06b748f55" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/client/search_results.blade.php" afterDir="false" />
+    <list default="true" id="a5e636e9-6397-4518-a977-1eb06b748f55" name="Default Changelist" comment="simple search is implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Pages/ClientPagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Pages/ClientPagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/shop.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,14 +212,8 @@
       <workItem from="1608894344754" duration="13511000" />
       <workItem from="1609172142535" duration="2404000" />
       <workItem from="1609255506477" duration="1787000" />
-      <workItem from="1609507778169" duration="6250000" />
-    </task>
-    <task id="LOCAL-00009" summary="authentication middlewares added">
-      <created>1605970953657</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1605970953657</updated>
+      <workItem from="1609507778169" duration="7519000" />
+      <workItem from="1610117970226" duration="2039000" />
     </task>
     <task id="LOCAL-00010" summary="cart system implemented">
       <created>1605975616694</created>
@@ -557,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609513189119</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="simple search is implemented">
+      <created>1609514049035</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1609514049035</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +566,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix cart bug" />
     <MESSAGE value="fix admin panel redirect" />
     <MESSAGE value="fix buy now bug" />
     <MESSAGE value="add multiple images feature" />
@@ -590,7 +590,8 @@
     <MESSAGE value="fix phone validation error" />
     <MESSAGE value="fix logo orientation in admin page" />
     <MESSAGE value="search implementation p1" />
-    <option name="LAST_COMMIT_MESSAGE" value="search implementation p1" />
+    <MESSAGE value="simple search is implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="simple search is implemented" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -616,10 +617,10 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="2264" y="59" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608802134907" />
-    <state x="206" y="0" width="1228" height="824" key="CommitChangelistDialog2" timestamp="1609513188049">
+    <state x="206" y="0" width="1228" height="824" key="CommitChangelistDialog2" timestamp="1609517673273">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="206" y="0" width="1228" height="824" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1609513188049" />
+    <state x="206" y="0" width="1228" height="824" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1609517673273" />
     <state x="2081" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608909227109" />
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1608796547239" />
     <state x="1965" y="0" key="DiffContextDialog" timestamp="1605968326004">
@@ -639,10 +640,10 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="1976" y="0" key="SettingsEditor/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608198260074" />
-    <state x="194" y="29" key="Vcs.Push.Dialog.v2" timestamp="1609512712773">
+    <state x="194" y="29" key="Vcs.Push.Dialog.v2" timestamp="1610119097520">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="194" y="29" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1609512712773" />
+    <state x="194" y="29" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1610119097520" />
     <state x="2092" y="26" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1608909231150" />
     <state x="2388" y="66" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1608735920815">
       <screen x="1920" y="0" width="1360" height="728" />
@@ -652,20 +653,20 @@
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="2246" y="204" width="925" height="692" key="dock-window-1/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1606142234706" />
-    <state x="2238" y="0" width="694" height="728" key="find.popup" timestamp="1609173297845">
-      <screen x="1920" y="0" width="1360" height="728" />
+    <state x="409" y="22" width="718" height="780" key="find.popup" timestamp="1610120348659">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="409" y="22" width="718" height="780" key="find.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1608885929109" />
+    <state x="409" y="22" width="718" height="780" key="find.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1610120348659" />
     <state x="2238" y="0" width="694" height="728" key="find.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1609173297845" />
     <state x="2222" y="162" width="744" height="914" key="run.anything.popup" timestamp="1607785967318">
       <screen x="1920" y="0" width="1360" height="728" />
     </state>
     <state x="2222" y="162" width="744" height="914" key="run.anything.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1607785967318" />
     <state x="341" y="183" width="840" height="1034" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606228616826" />
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1609513727195">
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1610120172234">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1609513727195" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@0.0.1536.824" timestamp="1610120172234" />
     <state x="2227" y="-1" width="840" height="914" key="search.everywhere.popup/0.0.1536.824/1920.0.1360.728@1920.0.1360.728" timestamp="1609172300608" />
     <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608796394425" />
   </component>

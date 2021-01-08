@@ -23,7 +23,21 @@
                             <!-- Carousel slider -->
                         </div>
                     </div>
-
+                    @if($product->is_active)
+                        <div class=" mt-4 d-md-block d-lg-none d-xl-none">
+                            <div class="col-lg-12">
+                                <a class="btn" href="{{ route('client.add_to_cart', $product->id) }}"><i
+                                        class="icon-shopping-cart"></i> Add to cart</a>
+                                <a class="btn btn-dark" href="{{ route('client.product.buy', $product->id) }}"><i
+                                        class="icon-shopping-bag"></i> Buy Now</a>
+                                @if($can_user_review)
+                                    <a class="btn btn-secondary"
+                                       href="{{ route('client.review', $product->id) }}"><i
+                                            class="fas fa-edit"></i> Write a review</a>
+                                @endif
+                            </div>
+                        </div>
+                    @endif
                     <div class="col-lg-7">
                         <div class="product-description">
                             <div class="product-category">{{ $product->category }}</div>
@@ -53,7 +67,7 @@
                             <div class="seperator m-t-20 m-b-10"></div>
                         </div>
                         @if($product->is_active)
-                            <div class="row">
+                            <div class="row d-none d-lg-block d-xl-block">
                                 <div class="col-lg-12">
                                     <a class="btn" href="{{ route('client.add_to_cart', $product->id) }}"><i
                                             class="icon-shopping-cart"></i> Add to cart</a>

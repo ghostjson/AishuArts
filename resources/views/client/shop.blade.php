@@ -5,15 +5,21 @@
     <style>
         .product-cart{
             border: 2px solid var(--primary);
-            border-radius: 50%;
-            height: 30px;
-            left: 12px;
+            /*border-radius: 50%;*/
+            /*height: 30px;*/
+            right: 4px;
             line-height: 28px;
             position: absolute;
             text-align: center;
-            top: 12px;
-            width: 30px;
+            top: 4px;
+            /*width: 30px;*/
             z-index: 3;
+            padding: 1px 4px;
+            transition: 0.5s all;
+            font-size: 0.8em;
+        }
+        .product-cart:hover{
+            background-color: var(--dark);
         }
         .product-cart a{
             color: var(--primary) !important;
@@ -96,13 +102,16 @@
                                     <a><img alt="{{ $product->name }}" src="{{ $product->image }}">
                                     </a>
                                     <span class="product-cart">
-                                        <a href="{{ route('client.add_to_cart', $product->id) }}"><i class="fas fa-shopping-cart"></i></a>
+                                        <a href="{{ route('client.add_to_cart', $product->id) }}">
+                                            <span>Add to cart</span>
+                                        </a>
                                     </span>
                                     <div class="product-overlay">
                                         <a>Quick View</a>
                                     </div>
                                 </div>
                                 <div class="product-description">
+
                                     <div class="product-category">{{ $product->category }}</div>
                                     <div class="product-title">
                                         <h3><a href="#">{{ $product->name }}</a></h3>
