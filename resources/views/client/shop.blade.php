@@ -101,17 +101,19 @@
                                     </a>
                                     <a><img alt="{{ $product->name }}" src="{{ $product->image }}">
                                     </a>
-                                    <span class="product-cart">
-                                        <a href="{{ route('client.add_to_cart', $product->id) }}">
-                                            <span>Add to cart</span>
-                                        </a>
-                                    </span>
+{{--                                    <span class="product-cart">--}}
+{{--                                        <a href="{{ route('client.add_to_cart', $product->id) }}">--}}
+{{--                                            <span>Add to cart</span>--}}
+{{--                                        </a>--}}
+{{--                                    </span>--}}
                                     <div class="product-overlay">
-                                        <a>Quick View</a>
+                                        <a href="#">Quick View</a>
                                     </div>
                                 </div>
                                 <div class="product-description">
-
+                                    <div>
+                                        <a class="btn btn-sm btn-dark" href="{{ route('client.add_to_cart', $product->id) }}">Add to cart</a>
+                                    </div>
                                     <div class="product-category">{{ $product->category }}</div>
                                     <div class="product-title">
                                         <h3><a href="#">{{ $product->name }}</a></h3>
